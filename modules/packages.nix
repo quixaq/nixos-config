@@ -113,14 +113,28 @@ in
 		gleam
 		beam28Packages.erlang
 		quickemu
+		xdg-dbus-proxy
+		xdg-desktop-portal
+		xdg-desktop-portal-gtk
+		xdg-desktop-portal-hyprland
 
 		# Games
 		prismlauncher
 		osu-lazer-bin
 	];
 	# ANCHOR xdg
+	# xdg.portal.xdgOpenUsePortal = true;
 	xdg.portal.enable = true;
-	xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-hyprland];
+	xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-hyprland];
+	xdg.portal.config = {
+		common.default = [ "gtk" ];
+		hyprland = {
+			default = [ "hyprland" "gtk" ];
+			"org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
+			"org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+		};
+	};
+	programs.dconf.enable = true;
 	# ANCHOR fonts
 	fonts.packages = with pkgs; [
 		noto-fonts
