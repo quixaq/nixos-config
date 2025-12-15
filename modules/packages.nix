@@ -89,6 +89,7 @@ in
 
 		# Themes
 		rose-pine-hyprcursor
+		gnome-themes-extra
 
 		# Utils
 		wine
@@ -112,11 +113,10 @@ in
 		cava
 		gleam
 		beam28Packages.erlang
-		quickemu
 		xdg-dbus-proxy
 		xdg-desktop-portal
 		xdg-desktop-portal-gtk
-		xdg-desktop-portal-hyprland
+		xdg-desktop-portal-gnome
 
 		# Games
 		prismlauncher
@@ -125,14 +125,21 @@ in
 	# ANCHOR xdg
 	# xdg.portal.xdgOpenUsePortal = true;
 	xdg.portal.enable = true;
-	xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-hyprland];
+	xdg.portal.xdgOpenUsePortal = true;
+	xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome];
 	xdg.portal.config = {
-		common.default = [ "gtk" ];
+		common.default = [ "gtk" "gnome" ];
 		hyprland = {
-			default = [ "hyprland" "gtk" ];
+			default = [ "gtk ""gnome" ];
 			"org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
 			"org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
 		};
+	};
+	xdg.portal.configPackages = [ pkgs.gnome-session ];
+	xdg.mime.defaultApplications = {
+		"text/html" = "chromium.desktop";
+		"x-scheme-handler/http" = "chromium.desktop";
+		"x-scheme-handler/https" = "chromium.desktop";
 	};
 	programs.dconf.enable = true;
 	# ANCHOR fonts
