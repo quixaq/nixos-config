@@ -335,7 +335,7 @@
 					"$mod, mouse_up, workspace, e-1"
 
 					# exit hyprland
-					"$mod CTRL SHIFT, M, exit"
+					"$mod CTRL SHIFT ALT, M, exit"
 				]
 				++ (
 					# workspaces

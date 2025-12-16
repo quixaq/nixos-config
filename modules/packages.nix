@@ -83,9 +83,10 @@ in
 		vscodium
 		godot
 		neovim
+		zed-editor
 
 		# LSPs
-		nixd
+		nil
 
 		# Themes
 		rose-pine-hyprcursor
@@ -116,7 +117,7 @@ in
 		xdg-dbus-proxy
 		xdg-desktop-portal
 		xdg-desktop-portal-gtk
-		xdg-desktop-portal-gnome
+		xdg-desktop-portal-shana
 
 		# Games
 		prismlauncher
@@ -124,16 +125,11 @@ in
 	];
 	# ANCHOR xdg
 	# xdg.portal.xdgOpenUsePortal = true;
-	xdg.portal.enable = true;
-	xdg.portal.xdgOpenUsePortal = true;
-	xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome];
-	xdg.portal.config = {
-		common.default = [ "gtk" "gnome" ];
-		hyprland = {
-			default = [ "gtk ""gnome" ];
-			"org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
-			"org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-		};
+	xdg.portal = {
+		enable = true;
+		wlr.enable = true;
+		extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-shana ];
+		config.common.default = "*";
 	};
 	xdg.portal.configPackages = [ pkgs.gnome-session ];
 	xdg.mime.defaultApplications = {
@@ -159,6 +155,7 @@ in
 
 	# Hyprland
 	programs.hyprland.enable = true;
+	#programs.hyprland.portalPackage = "${pkgs.stdenv.hostPlatform.system}".xdg-desktop-portal-hyprland;
 	programs.hyprland.withUWSM = true;
 	# hint Electron apps to use Wayland:
 	environment.sessionVariables.NIXOS_OZONE_WL = "1";
