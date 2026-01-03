@@ -25,6 +25,16 @@
           				}
           			'';
       };
+      # ANCHOR abaddon
+      programs.abaddon = {
+        enable = true;
+        settings = {
+          gui = {
+            show_deleted_indicator = true;
+          };
+        };
+      };
+
       # ANCHOR kitty
       programs.kitty = lib.mkForce {
         enable = true;

@@ -104,7 +104,7 @@ in
 
     # Graphical Apps
     kitty
-    xfce.thunar
+    thunar
     rofi
     chromium
     tor-browser
@@ -118,7 +118,7 @@ in
     gnome-system-monitor
     gimp-with-plugins
     libreoffice
-    legcord
+    abaddon
     obs-studio
     audacity
     filezilla

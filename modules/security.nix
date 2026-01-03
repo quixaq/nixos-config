@@ -1,6 +1,8 @@
 {
   # ANCHOR security
   security = {
+    pam.services.login.enableGnomeKeyring = true;
+    pam.services.greetd.enableGnomeKeyring = true;
     protectKernelImage = true;
     rtkit.enable = true;
     forcePageTableIsolation = true;

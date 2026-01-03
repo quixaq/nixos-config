@@ -82,5 +82,6 @@
         };
       };
     };
+    gnome.gnome-keyring.enable = true;
   };
 }
