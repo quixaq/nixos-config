@@ -31,5 +31,5 @@
     };
   };
   # breaks screen recording
-  environment.memoryAllocator.provider = "graphene-hardened";
+  # environment.memoryAllocator.provider = "graphene-hardened";
 }

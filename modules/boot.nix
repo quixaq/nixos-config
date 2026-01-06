@@ -1,10 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # ANCHOR Kernel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable;
   # ANCHOR Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.loader.limine.enable = true;
+  boot.loader.limine.secureBoot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # ANCHOR kernel params
   boot.kernelParams = [
@@ -151,6 +153,7 @@
     "vm.watermark_scale_factor" = 500;
     "vm.swappiness" = 100;
     "vm.page_lock_unfairness" = 1;
+    "vm.nr_hugepages" = 1280;
   };
   # ANCHOR blacklisted modules
   boot.blacklistedKernelModules = [

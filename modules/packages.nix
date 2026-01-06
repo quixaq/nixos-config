@@ -57,7 +57,6 @@ in
   environment.systemPackages = with pkgs; [
     # Hypr ecosystem
     hyprlock
-    hypridle
     hyprpicker
     hyprshot
     hyprlang
@@ -80,10 +79,10 @@ in
     git
     lm_sensors
     mat2
-    p2pool
     xmrig
     ydotool
     sbctl
+    efibootmgr
     ffmpeg
     flac
     ollama
@@ -91,8 +90,10 @@ in
     steghide
     yazi
     hyperfine
+    libsecret
 
     # GNU coreutils replacements
+    htop
     eza
     fd
     ripgrep
@@ -118,7 +119,6 @@ in
     gnome-system-monitor
     gimp-with-plugins
     libreoffice
-    abaddon
     obs-studio
     audacity
     filezilla

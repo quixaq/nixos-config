@@ -55,6 +55,19 @@
   hardware.cpu.x86.msr.enable = true;
   hardware.amdgpu.initrd.enable = true;
   hardware.amdgpu.opencl.enable = true;
+
+  systemd.services.snowflake-proxy = {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "mullvad-daemon.service" ];
+    wants = [ "mullvad-daemon.service" ];
+    serviceConfig = {
+      User = "root";
+      ExecStart = [
+        ""
+        "${pkgs.mullvad-vpn}/bin/mullvad-exclude ${pkgs.snowflake}/bin/proxy"
+      ];
+    };
+  };
   services = {
     flatpak.enable = true;
     resolved.enable = true;

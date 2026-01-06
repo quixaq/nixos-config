@@ -5,7 +5,6 @@
     { lib, config, ... }:
     {
       home.packages = [ ];
-      services.hypridle.enable = true;
       programs.bash = {
         enable = true;
       };
@@ -24,15 +23,6 @@
           					name "My PipeWire Output"
           				}
           			'';
-      };
-      # ANCHOR abaddon
-      programs.abaddon = {
-        enable = true;
-        settings = {
-          gui = {
-            show_deleted_indicator = true;
-          };
-        };
       };
 
       # ANCHOR kitty

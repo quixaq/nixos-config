@@ -11,8 +11,7 @@
     grep = "rg";
     cat = "bat";
     du = "dust";
-    top = "btm";
-    htop = "btm";
+    top = "htop";
     ps = "procs";
   };
   environment.interactiveShellInit = ''
