@@ -15,6 +15,12 @@
         37888
         3333
         10128
+        21587
+        21588
+        3023
+        3025
+        8008
+        8009
       ];
       allowedUDPPorts = [
         53317
@@ -27,6 +33,15 @@
         37888
         3333
         10128
+        3022
+        3024
+        5353
+      ];
+      allowedUDPPortRanges = [
+        {
+          from = 32768;
+          to = 61000;
+        }
       ];
       # Or disable the firewall altogether.
       # enable = false;

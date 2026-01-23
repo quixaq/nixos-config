@@ -1,20 +1,24 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 let
-  old-stable = import <nixos-old-stable> {
+  old-stable = import inputs.nixos-old-stable {
     system = pkgs.system;
     config = {
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ ];
     };
   };
-  /*
-    stable = import <nixos-stable> {
-    			system = pkgs.system;
-    			config = {
-    				allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [];
-    			};
-    	};
-  */
+
+  stable = import inputs.nixos-stable {
+    system = pkgs.system;
+    config = {
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ ];
+    };
+  };
 
   coreutils-full-name =
     "coreuutils-full"
@@ -90,6 +94,7 @@ in
     steghide
     yazi
     hyperfine
+    vitetris
     libsecret
 
     # GNU coreutils replacements
@@ -107,6 +112,7 @@ in
     kitty
     thunar
     rofi
+    legcord
     chromium
     tor-browser
     winetricks
@@ -123,11 +129,13 @@ in
     audacity
     filezilla
     localsend
+    heroic
+    seahorse
 
     # IDEs
     godot
     neovim
-    zed-editor
+    stable.zed-editor
 
     # LSPs
     nixd
@@ -219,6 +227,21 @@ in
   # GNUPG
   programs.gnupg.agent = {
     enable = true;
+  };
+
+  # Zwift
+  programs.zwift = {
+    enable = true;
+    image = "docker.io/netbrain/zwift";
+    containerTool = "docker";
+    containerExtraArgs = "";
+    zwiftWorkoutDir = "/home/quixaq/zwift/workouts";
+    zwiftActivityDir = "/home/quixaq/zwift/activities";
+    zwiftLogDir = "/home/quixaq/zwift/logs";
+    zwiftScreenshotsDir = "/home/quixaq/zwift/screenshots";
+    zwiftUid = "1000";
+    zwiftGid = "1000";
+    vgaDeviceFlag = "--gpus=all";
   };
 
   # ANCHOR replaceDependencies

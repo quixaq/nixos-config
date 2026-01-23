@@ -9,6 +9,12 @@
   # Enable running optimizer on build
   nix.settings.auto-optimise-store = true;
 
+  # Enable experimental features
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # system
   system = {
     autoUpgrade = {
