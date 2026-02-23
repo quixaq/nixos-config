@@ -1,25 +1,10 @@
 {
   pkgs,
   lib,
-  inputs,
   ...
 }:
 
 let
-  old-stable = import inputs.nixos-old-stable {
-    system = pkgs.system;
-    config = {
-      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ ];
-    };
-  };
-
-  stable = import inputs.nixos-stable {
-    system = pkgs.system;
-    config = {
-      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ ];
-    };
-  };
-
   coreutils-full-name =
     "coreuutils-full"
     + builtins.concatStringsSep "" (
@@ -32,31 +17,13 @@ let
       builtins.genList (_: "_") (builtins.stringLength pkgs.coreutils.version)
     );
 
-  /*
-    findutils-name =
+  findutils-name =
     "finduutils"
     + builtins.concatStringsSep "" (
       builtins.genList (_: "_") (builtins.stringLength pkgs.findutils.version)
     );
-  */
-
-  /*
-    diffutils-name =
-    "diffuutils"
-    + builtins.concatStringsSep "" (
-      builtins.genList (_: "_") (builtins.stringLength pkgs.diffutils.version)
-    );
-  */
 in
 {
-  # ANCHOR overlays
-  nixpkgs.overlays = [
-    (final: prev: {
-      ckb-next = prev.ckb-next.overrideAttrs (old: {
-        buildInputs = (old.buildInputs or [ ]) ++ [ old-stable.libsForQt5.libdbusmenu ];
-      });
-    })
-  ];
   # ANCHOR packages
   environment.systemPackages = with pkgs; [
     # Hypr ecosystem
@@ -114,10 +81,8 @@ in
     rofi
     legcord
     chromium
-    tor-browser
     winetricks
     file-roller
-    lutris
     protonup-qt
     ckb-next
     feh
@@ -129,13 +94,12 @@ in
     audacity
     filezilla
     localsend
-    heroic
     seahorse
 
     # IDEs
     godot
     neovim
-    stable.zed-editor
+    zed-editor
 
     # LSPs
     nixd
@@ -179,6 +143,9 @@ in
     # Games
     prismlauncher
     osu-lazer-bin
+    heroic
+    lutris
+    faugus-launcher
   ];
   # ANCHOR xdg
   # xdg.portal.xdgOpenUsePortal = true;
@@ -224,6 +191,12 @@ in
   # Steam
   programs.steam.enable = true;
 
+  # Gamescope
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+
   # GNUPG
   programs.gnupg.agent = {
     enable = true;
@@ -265,31 +238,17 @@ in
         paths = [ pkgs.uutils-coreutils-noprefix ];
       };
     }
-    /*
-      # findutils
-      {
-        # applications
-        oldDependency = pkgs.findutils;
-        newDependency = pkgs.symlinkJoin {
-          # Make the name length match so it builds
-          name = findutils-name;
-          paths = [ pkgs.uutils-findutils ];
-        };
-      }
-    */
-    /*
-      # diffutils
-      {
-        # applications
-        oldDependency = pkgs.diffutils;
-        newDependency = pkgs.symlinkJoin {
-          # Make the name length match so it builds
-          name = diffutils-name;
-          paths = [ pkgs.uutils-diffutils ];
-        };
-        }
-    */
-    # disabled due to breaking whole diffutils
+
+    # findutils
+    {
+      # applications
+      oldDependency = pkgs.findutils;
+      newDependency = pkgs.symlinkJoin {
+        # Make the name length match so it builds
+        name = findutils-name;
+        paths = [ pkgs.uutils-findutils ];
+      };
+    }
   ];
 
   # ANCHOR allowUnfreePredictate

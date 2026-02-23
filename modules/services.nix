@@ -47,14 +47,18 @@
   };
 
   # Services
-  hardware.ckb-next = {
-    enable = true;
-    package = pkgs.ckb-next;
+  hardware = {
+    ckb-next = {
+      enable = true;
+      package = pkgs.ckb-next;
+    };
+    bluetooth.enable = true;
+    bluetooth.powerOnBoot = true;
+    steam-hardware.enable = true;
+    cpu.x86.msr.enable = true;
+    amdgpu.initrd.enable = true;
+    amdgpu.opencl.enable = true;
   };
-  hardware.bluetooth.enable = false;
-  hardware.cpu.x86.msr.enable = true;
-  hardware.amdgpu.initrd.enable = true;
-  hardware.amdgpu.opencl.enable = true;
 
   systemd.services.snowflake-proxy = {
     wantedBy = [ "multi-user.target" ];
@@ -68,11 +72,16 @@
       ];
     };
   };
+
   services = {
     flatpak.enable = true;
     resolved.enable = true;
     mullvad-vpn.enable = true;
     mullvad-vpn.package = pkgs.mullvad-vpn;
+    tor = {
+      enable = true;
+      client.enable = true;
+    };
     gvfs.enable = true;
     tumbler.enable = true;
     dbus.enable = true;
@@ -96,5 +105,6 @@
       };
     };
     gnome.gnome-keyring.enable = true;
+    blueman.enable = true;
   };
 }

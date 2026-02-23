@@ -10,6 +10,7 @@
       "audio"
       "render"
       "video"
+      "kvm"
     ];
     # packages = with pkgs; [];
   };

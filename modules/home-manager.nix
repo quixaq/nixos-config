@@ -301,7 +301,7 @@
           "$mod, Q, exec, kitty"
           "$mod, C, killactive,"
           "$mod CTRL SHIFT, C, forcekillactive,"
-          "$mod, E, exec, thunar"
+          "$mod, E, exec, kitty -o confirm_os_window_close=0 -e yazi"
           "$mod, V, togglefloating,"
           "$mod, SPACE, exec, rofi -config ~/.local/share/rofi/themes/custom.rasi -show drun"
           "$mod, F, fullscreen"
@@ -313,7 +313,7 @@
           "$mod, semicolon, exec, smile"
           ", F19, exec, mpc toggle"
           "$mod, P, exec, kitty python"
-          "$mod, H, exec, kitty --class clipse -e clipse"
+          "$mod, H, exec, kitty --class clipse -o confirm_os_window_close=0 -e clipse"
           "$mod, Z, exec, zeditor"
 
           # move focus with mod + arrows
@@ -327,6 +327,9 @@
           "$mod, D, movefocus, r"
           "$mod, W, movefocus, u"
           "$mod, S, movefocus, d"
+
+          # move workspace between monitors
+          "$mod CTRL, M, movecurrentworkspacetomonitor, +1"
 
           # scratchpad
           "$mod, G, togglespecialworkspace, magic"
@@ -516,7 +519,10 @@
         };
 
         # monitors
-        monitor = "HDMI-A-1,2560x1080@75,0x0,1";
+        monitor = [
+          "HDMI-A-1,2560x1080@75,0x0,1"
+          "HDMI-A-@,3840x2160@60,auto,1"
+        ];
 
         # disable nag
         ecosystem = {

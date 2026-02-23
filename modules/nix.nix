@@ -13,6 +13,10 @@
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
+    "auto-allocate-uids"
+    "cgroups"
+    "ca-derivations"
+    "no-url-literals"
   ];
 
   # system
