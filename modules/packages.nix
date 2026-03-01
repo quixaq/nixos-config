@@ -205,19 +205,19 @@ in
   };
 
   # Zwift
-  programs.zwift = {
-    enable = true;
-    image = "docker.io/netbrain/zwift";
-    containerTool = "docker";
-    containerExtraArgs = "";
-    zwiftWorkoutDir = "/home/quixaq/zwift/workouts";
-    zwiftActivityDir = "/home/quixaq/zwift/activities";
-    zwiftLogDir = "/home/quixaq/zwift/logs";
-    zwiftScreenshotsDir = "/home/quixaq/zwift/screenshots";
-    zwiftUid = "1000";
-    zwiftGid = "1000";
-    vgaDeviceFlag = "--gpus=all";
-  };
+  #programs.zwift = {
+  #  enable = true;
+  #  image = "docker.io/netbrain/zwift";
+  #  containerTool = "docker";
+  #  containerExtraArgs = "";
+  #  zwiftWorkoutDir = "/home/quixaq/zwift/workouts";
+  #  zwiftActivityDir = "/home/quixaq/zwift/activities";
+  #  zwiftLogDir = "/home/quixaq/zwift/logs";
+  #  zwiftScreenshotsDir = "/home/quixaq/zwift/screenshots";
+  #  zwiftUid = "1000";
+  #  zwiftGid = "1000";
+  #  vgaDeviceFlag = "--gpus=all";
+  #};
 
   # ANCHOR replaceDependencies
   system.replaceDependencies.replacements = [

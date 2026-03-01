@@ -5,14 +5,14 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    zwift.url = "github:netbrain/zwift";
+    #zwift.url = "github:netbrain/zwift";
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      zwift,
+#      zwift,
       ...
     }@inputs:
     {
@@ -20,7 +20,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          zwift.nixosModules.zwift
+         # zwift.nixosModules.zwift
           ./configuration.nix
         ];
       };
