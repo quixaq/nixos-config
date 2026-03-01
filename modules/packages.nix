@@ -63,6 +63,7 @@ in
     hyperfine
     vitetris
     libsecret
+    google-lighthouse
 
     # GNU coreutils replacements
     htop
@@ -95,6 +96,7 @@ in
     filezilla
     localsend
     seahorse
+    kdePackages.kdenlive
 
     # IDEs
     godot

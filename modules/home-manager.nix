@@ -312,7 +312,7 @@
           ", F21, exec, mpc status | grep -q '\\[playing\\]' ; playing=$? ; mpc pause ; hyprlock ; if [ \"$playing\" -eq 0 ] ; then mpc play ; fi"
           "$mod, semicolon, exec, smile"
           ", F19, exec, mpc toggle"
-          "$mod, P, exec, kitty python"
+          "$mod, P, exec, kitty -o confirm_os_window_close=0 -e python"
           "$mod, H, exec, kitty --class clipse -o confirm_os_window_close=0 -e clipse"
           "$mod, Z, exec, zeditor"
 

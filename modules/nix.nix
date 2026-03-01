@@ -1,3 +1,5 @@
+{ inputs, ... }:
+
 {
   # Enable daily garbage collection
   nix.gc = {
@@ -23,7 +25,12 @@
   system = {
     autoUpgrade = {
       enable = true;
+      flake = inputs.self.outPath;
+      flags = [ "-L" ];
+      dates = "daily";
+      persistent = true;
       allowReboot = false;
+      runGarbageCollection = true;
     };
 
     # This value determines the NixOS release from which the default
