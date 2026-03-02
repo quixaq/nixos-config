@@ -12,7 +12,7 @@
     {
       self,
       nixpkgs,
-#      zwift,
+      #      zwift,
       ...
     }@inputs:
     {
@@ -20,7 +20,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-         # zwift.nixosModules.zwift
+          # zwift.nixosModules.zwift
           ./configuration.nix
         ];
       };
