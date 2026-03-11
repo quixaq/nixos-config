@@ -4,6 +4,9 @@
   home-manager.users.quixaq =
     { lib, config, ... }:
     {
+      imports = [
+        ./shell.nix
+      ];
       home.packages = [ ];
       programs.bash = {
         enable = true;

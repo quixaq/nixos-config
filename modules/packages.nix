@@ -253,6 +253,9 @@ in
     }
   ];
 
+  # ANCHOR zsh
+  programs.zsh.enable = true;
+
   # ANCHOR allowUnfreePredictate
   nixpkgs.config.allowUnfreePredicate =
     pkg:

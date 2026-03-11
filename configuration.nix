@@ -19,7 +19,6 @@
     ./modules/users.nix
     ./modules/nix.nix
     ./modules/security.nix
-    ./modules/shell.nix
     ./modules/fs.nix
   ];
 }

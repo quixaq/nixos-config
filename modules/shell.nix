@@ -1,11 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
+  home.file.".p10k.zsh".source = ./p10k.zsh;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestions.enable = true;
-    syntax-highlighting.enable = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    dotDir = "${config.xdg.configHome}/zsh";
 
     plugins = [
       {
@@ -15,7 +17,7 @@
       }
     ];
 
-    ohMyZsh = {
+    oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
       theme = "";
@@ -34,5 +36,9 @@
       top = "htop";
       ps = "procs";
     };
+
+    initContent = ''
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    '';
   };
 }
