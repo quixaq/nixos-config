@@ -206,6 +206,8 @@
     "zstd"
     "zsmalloc"
   ];
+  # ANCHOR ntfs
+  boot.supportedFilesystems = [ "ntfs" ];
 
   boot.tmp.cleanOnBoot = true;
 }
