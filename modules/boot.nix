@@ -5,8 +5,10 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable;
   # ANCHOR Bootloader.
   boot.loader.systemd-boot.enable = lib.mkForce false;
-  boot.loader.limine.enable = true;
-  boot.loader.limine.secureBoot.enable = true;
+  boot.loader.limine = {
+    enable = true;
+    secureBoot.enable = true;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
   # ANCHOR kernel params
   boot.kernelParams = [
