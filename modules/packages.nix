@@ -189,6 +189,8 @@ in
   programs.hyprland.withUWSM = true;
   # hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # Enable hyprlock
+  programs.hyprlock.enable = true;
 
   # Steam
   programs.steam.enable = true;
