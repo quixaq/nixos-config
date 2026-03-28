@@ -35,6 +35,8 @@
       du = "dust";
       top = "htop";
       ps = "procs";
+      neofetch = "qfetch";
+      fastfetch = "qfetch";
     };
 
     initContent = ''

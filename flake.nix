@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    qfetch.url = "github:quixaq/qfetch";
     #zwift.url = "github:netbrain/zwift";
   };
 
@@ -12,6 +13,7 @@
     {
       self,
       nixpkgs,
+      qfetch,
       #      zwift,
       ...
     }@inputs:
@@ -22,6 +24,7 @@
         modules = [
           # zwift.nixosModules.zwift
           ./configuration.nix
+          qfetch.nixosModules.default
         ];
       };
     };

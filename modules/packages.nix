@@ -44,7 +44,6 @@ in
 
     # CLI's
     vim
-    fastfetch
     mpc
     android-tools
     p7zip

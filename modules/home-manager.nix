@@ -97,49 +97,6 @@ in
           color15 = "#ebebff";
         };
       };
-      # ANCHOR fastfetch
-      programs.fastfetch = lib.mkForce {
-        enable = true;
-        settings = {
-          logo = {
-            color = {
-              "1" = "#967ce2";
-              "2" = "#8951c1";
-            };
-          };
-          display = {
-            color = {
-              title = "#b19cd9";
-              separator = "#ff6961";
-              keys = "#b19cd9";
-              output = "#eec1cb";
-            };
-            hideCursor = false;
-          };
-          modules = [
-            "title"
-            "separator"
-            "os"
-            "host"
-            "kernel"
-            "uptime"
-            "display"
-            "wm"
-            "theme"
-            "cursor"
-            "terminal"
-            "terminalfont"
-            "cpu"
-            "gpu"
-            "memory"
-            "swap"
-            "disk"
-            "locale"
-            "break"
-            "colors"
-          ];
-        };
-      };
 
       # ANCHOR hyprlock
       programs.hyprlock = lib.mkForce {
