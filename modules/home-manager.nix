@@ -1,5 +1,10 @@
 { pkgs, ... }:
 
+let
+  lockScript = pkgs.writeShellScript "lock" ''
+    ! ${pkgs.uutils-procps}/bin/pgrep -x hyprlock > /dev/null && (${pkgs.mpc}/bin/mpc status | grep -q '\[playing\]' ; playing=$? ; ${pkgs.mpc}/bin/mpc pause ; ${pkgs.hyprlock}/bin/hyprlock ; if [ "$playing" -eq 0 ] ; then ${pkgs.mpc}/bin/mpc play ; fi)
+  '';
+in
 {
   home-manager.users.quixaq =
     { lib, config, ... }:
@@ -33,7 +38,7 @@
         enable = true;
         settings = {
           general = {
-            lock_cmd = "pidof hyprlock || hyprlock";
+            lock_cmd = "${lockScript}";
             before_sleep_cmd = "loginctl lock-session";
             after_sleep_cmd = "hyprctl dispatch dpms on";
           };
@@ -329,7 +334,7 @@
           "$mod, F, fullscreen"
           "$mod, B, exec, chromium"
           "$mod, Print, exec, hyprshot --clipboard-only -m region -z"
-          "$mod, L, exec, mpc status | grep -q '\\[playing\\]' ; playing=$? ; mpc pause ; hyprlock ; if [ \"$playing\" -eq 0 ] ; then mpc play ; fi"
+          "$mod, L, exec, mpc status | loginctl lock-session"
           "$mod, O, exec, hyprpicker -a -l"
           ", F21, exec, mpc status | grep -q '\\[playing\\]' ; playing=$? ; mpc pause ; hyprlock ; if [ \"$playing\" -eq 0 ] ; then mpc play ; fi"
           "$mod, semicolon, exec, smile"

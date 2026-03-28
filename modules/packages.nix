@@ -22,6 +22,14 @@ let
     + builtins.concatStringsSep "" (
       builtins.genList (_: "_") (builtins.stringLength pkgs.findutils.version)
     );
+
+  procps-name =
+    "procps"
+    + builtins.concatStringsSep "" (
+      builtins.genList (_: "_") (
+        (builtins.stringLength pkgs.procps.name) - (builtins.stringLength "procps")
+      )
+    );
 in
 {
   # ANCHOR packages
@@ -251,6 +259,17 @@ in
         # Make the name length match so it builds
         name = findutils-name;
         paths = [ pkgs.uutils-findutils ];
+      };
+    }
+
+    # procps
+    {
+      # applications
+      oldDependency = pkgs.procps;
+      newDependency = pkgs.symlinkJoin {
+        # Make the name length match so it builds
+        name = procps-name;
+        paths = [ pkgs.uutils-procps ];
       };
     }
   ];
