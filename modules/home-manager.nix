@@ -794,6 +794,7 @@ in
           name = "Adwaita-dark";
           package = pkgs.gnome-themes-extra;
         };
+        gtk4.theme = null;
       };
 
       # The state version is required and should stay at the version you
