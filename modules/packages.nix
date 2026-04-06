@@ -287,7 +287,6 @@ in
         stdenv = prev.withHelpers.wrapStdenv prev.stdenv {
           extraBeforeFlags = [
             "-march=znver4"
-            "-O3"
           ];
         };
       };
