@@ -118,6 +118,7 @@ in
     rust-analyzer
     rustfmt
     clippy
+    luau-lsp
 
     # Themes
     rose-pine-hyprcursor
