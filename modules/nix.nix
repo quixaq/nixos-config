@@ -1,4 +1,4 @@
-{ inputs, pesde-nix, ... }:
+{ inputs, ... }:
 
 {
   # Enable daily garbage collection
