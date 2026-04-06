@@ -20,5 +20,6 @@
     ./modules/nix.nix
     ./modules/security.nix
     ./modules/fs.nix
+    ./modules/audio.nix
   ];
 }

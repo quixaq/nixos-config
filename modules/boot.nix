@@ -1,8 +1,10 @@
-{ pkgs, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 
 {
-  # ANCHOR Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable;
   # ANCHOR Bootloader.
   boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.loader.limine = {
@@ -44,8 +46,8 @@
     "iommu.strict=1"
     "cfi"
     "bdev_allow_write_mounted=0"
-    "preempt=full"
     "zswap.enabled=1"
+    "zswap.zpool=zsmalloc"
     "zswap.compressor=zstd"
     "zswap.max_pool_percent=25"
   ];
@@ -153,9 +155,8 @@
     "vm.watermark_boost_factor" = 1;
     "vm.min_free_kbytes" = 1048576;
     "vm.watermark_scale_factor" = 500;
-    "vm.swappiness" = 100;
     "vm.page_lock_unfairness" = 1;
-    "vm.nr_hugepages" = 1280;
+    "kernel.mm.transparent_hugepage.enabled" = "madvise";
   };
   # ANCHOR blacklisted modules
   boot.blacklistedKernelModules = [
@@ -201,7 +202,7 @@
   ];
   # ANCHOR extra module packagess
   boot.extraModulePackages = [
-    pkgs.linuxKernel.packages.linux_xanmod_stable.hid-t150
+    config.boot.kernelPackages.hid-t150
   ];
   # ANCHOR initrd
   boot.initrd.kernelModules = [

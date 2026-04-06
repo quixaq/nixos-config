@@ -279,6 +279,20 @@ in
     }
   ];
 
+  # Overlays
+  nixpkgs.overlays = [
+    (final: prev: {
+      linux_xanmod_stable = prev.linux_xanmod_stable.override {
+        stdenv = prev.withHelpers.wrapStdenv prev.stdenv {
+          extraBeforeFlags = [
+            "-march=znver4"
+            "-O3"
+          ];
+        };
+      };
+    })
+  ];
+
   # ANCHOR zsh
   programs.zsh.enable = true;
 
