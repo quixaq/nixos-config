@@ -120,6 +120,7 @@ in
     rustfmt
     clippy
     luau-lsp
+    package-version-server
 
     # Themes
     rose-pine-hyprcursor
