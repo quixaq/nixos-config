@@ -111,6 +111,7 @@ in
     godot
     neovim
     zed-editor
+    zed-discord-presence
 
     # LSPs
     nixd
