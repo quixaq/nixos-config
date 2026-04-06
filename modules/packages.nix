@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  pesde-nix,
   ...
 }:
 
@@ -55,6 +56,7 @@ in
     yt-dlp
     iftop
     git
+    gh
     lm_sensors
     mat2
     xmrig
@@ -68,7 +70,7 @@ in
     steghide
     yazi
     hyperfine
-    vitetris
+    shtris
     libsecret
     google-lighthouse
 
@@ -122,6 +124,10 @@ in
     gnome-themes-extra
 
     # Utils
+    rojo
+    lune
+    wally
+    pesde-nix.packages.${pkgs.system}.default
     wine
     dunst
     smile

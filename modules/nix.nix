@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pesde-nix, ... }:
 
 {
   # Enable daily garbage collection
@@ -21,6 +21,10 @@
     "no-url-literals"
   ];
 
+  nix.settings.substituters = [ "https://pesde.cachix.org" ];
+  nix.settings.trusted-public-keys = [
+    "pesde.cachix.org-1:Tp5MQIJI/ZWprqkV320kOO3Gym9mzHfv7GUYWZdtK8g="
+  ];
   # system
   system = {
     autoUpgrade = {
