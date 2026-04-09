@@ -155,6 +155,9 @@ in
     xdg-desktop-portal-gtk
     xdg-desktop-portal-shana
     pavucontrol
+    nh
+    nvd
+    nix-output-monitor
 
     # Games
     prismlauncher
@@ -218,6 +221,16 @@ in
   # GNUPG
   programs.gnupg.agent = {
     enable = true;
+  };
+
+  # NH
+  programs.nh = {
+    enable = true;
+    flake = "/home/quixaq/NixOS";
+    clean = {
+      enable = true;
+      extraArgs = "--keep-since 14d --keep 10";
+    };
   };
 
   # Zwift

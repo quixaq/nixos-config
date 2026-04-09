@@ -1,13 +1,6 @@
 { inputs, ... }:
 
 {
-  # Enable daily garbage collection
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 30d";
-  };
-
   # Enable running optimizer on build
   nix.settings.auto-optimise-store = true;
 
