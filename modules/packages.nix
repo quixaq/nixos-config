@@ -70,7 +70,7 @@ in
     steghide
     yazi
     hyperfine
-    shtris
+    yetris
     libsecret
     google-lighthouse
 
