@@ -4,6 +4,9 @@
   # Enable running optimizer on build
   nix.settings.auto-optimise-store = true;
 
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
   # Enable experimental features
   nix.settings.experimental-features = [
     "nix-command"
