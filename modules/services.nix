@@ -22,6 +22,7 @@
     cpu.x86.msr.enable = true;
     amdgpu.initrd.enable = true;
     amdgpu.opencl.enable = true;
+    cpu.amd.updateMicrocode = true;
   };
 
   systemd.services.snowflake-proxy = {
