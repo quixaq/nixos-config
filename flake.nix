@@ -14,6 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.lix.follows = "lix";
     };
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     musnix.url = "github:musnix/musnix";
     qfetch.url = "github:quixaq/qfetch";
     #zwift.url = "github:netbrain/zwift";
@@ -25,6 +27,7 @@
       lix-module,
       lix,
       nixpkgs,
+      nix-index-database,
       musnix,
       qfetch,
       #      zwift,
@@ -41,7 +44,9 @@
           # zwift.nixosModules.zwift
           ./configuration.nix
           lix-module.nixosModules.default
+          nix-index-database.nixosModules.default
           qfetch.nixosModules.default
+          { programs.nix-index-database.comma.enable = true; }
         ];
       };
     };
