@@ -129,7 +129,6 @@ in
     rojo
     lune
     wally
-    pesde-nix.packages.${pkgs.system}.default
     wine
     dunst
     smile

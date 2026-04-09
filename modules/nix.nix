@@ -17,8 +17,6 @@
     "flakes"
     "auto-allocate-uids"
     "cgroups"
-    "ca-derivations"
-    "no-url-literals"
   ];
 
   nix.settings.substituters = [ "https://pesde.cachix.org" ];
