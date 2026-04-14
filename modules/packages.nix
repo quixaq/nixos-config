@@ -43,6 +43,7 @@ in
     hyprwayland-scanner
 
     # CLI's
+    trash-cli
     vim
     mpc
     android-tools
