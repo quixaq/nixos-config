@@ -17,6 +17,7 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     musnix.url = "github:musnix/musnix";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     qfetch.url = "github:quixaq/qfetch";
     #zwift.url = "github:netbrain/zwift";
   };
@@ -29,6 +30,7 @@
       nixpkgs,
       nix-index-database,
       musnix,
+      nix-flatpak,
       qfetch,
       #      zwift,
       ...
@@ -45,6 +47,7 @@
           ./configuration.nix
           lix-module.nixosModules.default
           nix-index-database.nixosModules.default
+          nix-flatpak.nixosModules.nix-flatpak
           qfetch.nixosModules.default
           { programs.nix-index-database.comma.enable = true; }
         ];

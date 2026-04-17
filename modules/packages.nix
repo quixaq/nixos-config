@@ -166,6 +166,20 @@ in
     lutris
     faugus-launcher
   ];
+  # flatpak
+  services.flatpak = {
+    enable = true;
+    update.auto = {
+      enable = true;
+      onCalendar = "daily";
+    };
+    packages = [
+      "com.github.Matoking.protontricks"
+      "io.github.Soundux"
+      "org.vinegarhq.Sober"
+      "org.vinegarhq.Vinegar"
+    ];
+  };
   # ANCHOR xdg
   # xdg.portal.xdgOpenUsePortal = true;
   xdg.portal = {
