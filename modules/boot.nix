@@ -181,7 +181,7 @@
         PAGE_TABLE_ISOLATION = yes;
         LEGACY_VSYSCALL_NONE = yes;
         RANDOMIZE_KSTACK_OFFSET_DEFAULT = yes;
-        MZEN3 = yes;
+        MZEN4 = yes;
         MODIFY_LDT_SYSCALL = no;
 
         # CPU mitigations
