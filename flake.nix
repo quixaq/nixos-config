@@ -19,6 +19,7 @@
     musnix.url = "github:musnix/musnix";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     qfetch.url = "github:quixaq/qfetch";
+    pesde-nix.url = "github:quixaq/pesde-nix";
     #zwift.url = "github:netbrain/zwift";
   };
 
@@ -32,6 +33,7 @@
       musnix,
       nix-flatpak,
       qfetch,
+      pesde-nix,
       #      zwift,
       ...
     }@inputs:
@@ -49,6 +51,7 @@
           nix-index-database.nixosModules.default
           nix-flatpak.nixosModules.nix-flatpak
           qfetch.nixosModules.default
+          pesde-nix.nixosModules.default
           { programs.nix-index-database.comma.enable = true; }
         ];
       };
