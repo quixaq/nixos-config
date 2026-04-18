@@ -169,10 +169,6 @@ in
   # flatpak
   services.flatpak = {
     enable = true;
-    update.auto = {
-      enable = true;
-      onCalendar = "daily";
-    };
     packages = [
       "com.github.Matoking.protontricks"
       "io.github.Soundux"
