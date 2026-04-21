@@ -240,6 +240,7 @@ in
     clean = {
       enable = true;
       extraArgs = "--keep-since 14d --keep 10";
+      dates = "daily";
     };
   };
 
