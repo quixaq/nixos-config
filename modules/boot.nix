@@ -20,6 +20,7 @@
     "random.trust_cpu=off"
     "random.trust_bootloader=off"
 
+    "skew_tick=1"
     "intel_iommu=on"
     "amd_iommu=force_isolation"
     "efi=disable_early_pci_dma"
@@ -27,6 +28,7 @@
     "iommu.passthrough=0"
     "iommu.strict=1"
     "bdev_allow_write_mounted=0"
+    "nosmt"
 
     "mitigations=auto"
     "spectre_v2=on"
@@ -169,6 +171,7 @@
         UBSAN_BOUNDS = yes;
         SLAB_FREELIST_RANDOM = yes;
         SLAB_FREELIST_HARDENED = yes;
+        KSM = no;
 
         # Kernel
         KALLSYMS = no;
@@ -183,6 +186,12 @@
         RANDOMIZE_KSTACK_OFFSET_DEFAULT = yes;
         MZEN4 = yes;
         MODIFY_LDT_SYSCALL = no;
+        SCHED_SMT = no;
+        NUMA = no;
+        RCU_NOCB_CPU = yes;
+        RCU_LAZY = yes;
+        MICROCODE_AMD = yes;
+        MICROCODE_LATE_LOADING = no;
 
         # CPU mitigations
         MITIGATION_SPECTRE_V2 = yes;
