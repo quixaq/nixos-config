@@ -29,6 +29,10 @@
     "iommu.strict=1"
     "bdev_allow_write_mounted=0"
     "nosmt"
+    "isolcpus=1-7"
+    "rcu_nocbs=1-7"
+    "kthread_cpus=0"
+    "irqaffinity=0"
 
     "mitigations=auto"
     "spectre_v2=on"
