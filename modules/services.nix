@@ -1,6 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  # SystemD
+  systemd.settings.Manager = {
+    KExecWatchdogSec = "5min";
+    RebootWatchdogSec = "10min";
+    RuntimeWatchdogSec = "30s";
+    WatchdogDevice = "/dev/watchdog";
+    CPUAffinity = "1-7";
+  };
+
   # Docker
   virtualisation.docker = {
     enable = false;
