@@ -99,7 +99,6 @@ in
     mpv
     gnome-system-monitor
     gimp-with-plugins
-    libreoffice
     obs-studio
     audacity
     filezilla
@@ -158,6 +157,7 @@ in
     nh
     nvd
     nix-output-monitor
+    sops
 
     # Games
     prismlauncher
@@ -314,6 +314,11 @@ in
           ];
         };
       };
+    })
+    (final: prev: {
+      openldap = prev.openldap.overrideAttrs (oldAttrs: {
+        doCheck = false;
+      });
     })
   ];
 

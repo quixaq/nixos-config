@@ -36,6 +36,7 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     musnix.url = "github:musnix/musnix";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    sops-nix.url = "github:Mic92/sops-nix";
     qfetch.url = "github:quixaq/qfetch";
     pesde-nix.url = "github:quixaq/pesde-nix";
     #zwift.url = "github:netbrain/zwift";
@@ -52,6 +53,7 @@
       nix-flatpak,
       qfetch,
       pesde-nix,
+      sops-nix,
       #      zwift,
       ...
     }@inputs:
@@ -71,6 +73,15 @@
           qfetch.nixosModules.default
           pesde-nix.nixosModules.default
           { programs.nix-index-database.comma.enable = true; }
+          sops-nix.nixosModules.sops
+          {
+            sops.defaultSopsFile = ./secrets/secrets.yaml;
+            sops.age.keyFile = "/home/quixaq/.config/sops/age/keys.txt";
+            sops.secrets.git_signing_key = {
+              owner = "quixaq";
+              path = "/home/quixaq/.ssh/id_quixaq_signing";
+            };
+          }
         ];
       };
     };

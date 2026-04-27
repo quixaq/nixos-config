@@ -33,6 +33,23 @@ in
           			'';
       };
 
+      # Git
+      programs.git = {
+        enable = true;
+        settings = {
+          user.name = "Quixaq";
+          user.email = "quixaq@tutamail.com";
+          user.signingKey = "/home/quixaq/.ssh/id_quixaq_signing";
+          gpg.format = "ssh";
+          commit.gpgsign = true;
+          gpg.ssh.allowedSignersFile = "/home/quixaq/.ssh/allowed_signers";
+        };
+      };
+
+      home.file.".ssh/allowed_signers".text = ''
+        quixaq@tutamail.com namespaces="git" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK7OlPMLAE4LtgxFaZxpyKT1lWKuzdwX3gl1KZi33MPZ
+      '';
+
       # ANCHOR hypridle
       services.hypridle = {
         enable = true;
