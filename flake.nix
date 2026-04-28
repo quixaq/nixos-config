@@ -39,6 +39,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     qfetch.url = "github:quixaq/qfetch";
     pesde-nix.url = "github:quixaq/pesde-nix";
+    nh.url = "github:nix-community/nh";
     #zwift.url = "github:netbrain/zwift";
   };
 
@@ -54,6 +55,7 @@
       qfetch,
       pesde-nix,
       sops-nix,
+      nh,
       #      zwift,
       ...
     }@inputs:
@@ -74,6 +76,9 @@
           pesde-nix.nixosModules.default
           { programs.nix-index-database.comma.enable = true; }
           sops-nix.nixosModules.sops
+          {
+            nixpkgs.overlays = [ nh.overlays.default ];
+          }
           {
             sops.defaultSopsFile = ./secrets/secrets.yaml;
             sops.age.keyFile = "/home/quixaq/.config/sops/age/keys.txt";
