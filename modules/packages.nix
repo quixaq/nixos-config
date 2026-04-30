@@ -60,6 +60,7 @@ in
     lm_sensors
     mat2
     xmrig
+    p2pool
     ydotool
     sbctl
     efibootmgr
