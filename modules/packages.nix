@@ -51,6 +51,7 @@ in
     gamemode
     pipes
     cmatrix
+    asciiquarium
     cava
     playerctl
     yt-dlp
