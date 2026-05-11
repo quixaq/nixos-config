@@ -177,6 +177,7 @@ in
       "io.github.Soundux"
       "org.vinegarhq.Sober"
       "org.vinegarhq.Vinegar"
+      "org.musicbrainz.Picard"
     ];
   };
   # ANCHOR xdg
