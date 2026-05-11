@@ -107,6 +107,7 @@ in
     localsend
     seahorse
     kdePackages.kdenlive
+    calibre
 
     # IDEs
     godot
