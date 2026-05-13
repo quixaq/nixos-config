@@ -184,6 +184,14 @@
         STACKLEAK_TRACK_MIN_SIZE = 128;
         HZ_1000 = yes;
 
+        # Build
+        LTO_NONE = no;
+        LTO_CLANG_THIN = yes;
+        HAS_LTO_CLANG = yes;
+        CFI_CLANG = yes;
+        CFI_PERMISSIVE = no;
+        SCHED_STACK_END_CHECK = yes;
+
         # CPU
         PAGE_TABLE_ISOLATION = yes;
         LEGACY_VSYSCALL_NONE = yes;
