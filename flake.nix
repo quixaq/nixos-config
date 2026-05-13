@@ -40,8 +40,8 @@
     qfetch.url = "github:quixaq/qfetch";
     pesde-nix.url = "github:quixaq/pesde-nix";
     nh.url = "github:nix-community/nh";
-    bookokrat.url = "github:bugzmanov/bookokrat";
-    #zwift.url = "github:netbrain/zwift";
+    # bookokrat.url = "github:bugzmanov/bookokrat";
+    # zwift.url = "github:netbrain/zwift";
   };
 
   outputs =
@@ -57,7 +57,7 @@
       pesde-nix,
       sops-nix,
       nh,
-      bookokrat,
+      # bookokrat,
       #      zwift,
       ...
     }@inputs:
@@ -76,7 +76,7 @@
           nix-flatpak.nixosModules.nix-flatpak
           qfetch.nixosModules.default
           pesde-nix.nixosModules.default
-          { environment.systemPackages = [ inputs.bookokrat.packages."x86_64-linux".default ]; }
+          # { environment.systemPackages = [ inputs.bookokrat.packages."x86_64-linux".default ]; }
           { programs.nix-index-database.comma.enable = true; }
           sops-nix.nixosModules.sops
           {
