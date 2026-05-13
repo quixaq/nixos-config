@@ -46,7 +46,7 @@ in
     trash-cli
     vim
     mpc
-    rsgain
+    loudgain
     android-tools
     p7zip
     gamemode
