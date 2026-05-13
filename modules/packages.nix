@@ -42,10 +42,11 @@ in
     hyprutils
     hyprwayland-scanner
 
-    # CLI's
+    # CLIs
     trash-cli
     vim
     mpc
+    rsgain
     android-tools
     p7zip
     gamemode
