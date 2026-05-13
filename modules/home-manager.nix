@@ -26,10 +26,13 @@ in
         enable = true;
         musicDirectory = "/home/quixaq/Music";
         extraConfig = ''
-          				audio_output {
-          					type "pipewire"
-          					name "My PipeWire Output"
-          				}
+          replaygain "track"
+          replaygain_preamp "0"
+          replaygain_limit "yes"
+          audio_output {
+            type "pipewire"
+            name "My PipeWire Output"
+          }
           			'';
       };
 
