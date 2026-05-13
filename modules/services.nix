@@ -46,6 +46,14 @@
       ];
     };
   };
+  systemd.services.jitterentropy.serviceConfig = {
+    SystemCallFilter = [
+      "@system-service"
+      "mlock"
+    ];
+    CapabilityBoundingSet = [ "CAP_IPC_LOCK" ];
+    AmbientCapabilities = [ "CAP_IPC_LOCK" ];
+  };
 
   services = {
     resolved.enable = true;
