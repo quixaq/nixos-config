@@ -179,6 +179,7 @@ in
       "org.vinegarhq.Sober"
       "org.vinegarhq.Vinegar"
       "org.musicbrainz.Picard"
+      "com.usebottles.bottles"
     ];
   };
   # ANCHOR xdg
