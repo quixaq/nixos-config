@@ -109,6 +109,7 @@ in
     seahorse
     kdePackages.kdenlive
     calibre
+    reaper
 
     # IDEs
     godot
@@ -340,5 +341,6 @@ in
       "steam-unwrapped"
       "steam-run"
       "osu-lazer-bin"
+      "reaper"
     ];
 }
