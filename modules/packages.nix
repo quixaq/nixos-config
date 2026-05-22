@@ -76,6 +76,7 @@ in
     yetris
     libsecret
     google-lighthouse
+    yabridgectl
 
     # GNU coreutils replacements
     htop
@@ -163,6 +164,7 @@ in
     nvd
     nix-output-monitor
     sops
+    yabridge
 
     # Games
     prismlauncher
