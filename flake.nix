@@ -84,7 +84,7 @@
           }
           {
             sops.defaultSopsFile = ./secrets/secrets.yaml;
-            sops.age.keyFile = "/home/quixaq/.config/sops/age/keys.txt";
+            sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
             sops.secrets.git_signing_key = {
               owner = "quixaq";
               path = "/home/quixaq/.ssh/id_quixaq_signing";
