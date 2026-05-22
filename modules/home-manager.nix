@@ -301,23 +301,23 @@ in
         # ANCHOR hyprland keybinds
         "$mod" = "SUPER";
         bind = [
-          "$mod, Q, exec, kitty"
+          "$mod, Q, exec, uwsm-app -- kitty"
           "$mod, C, killactive,"
           "$mod CTRL SHIFT, C, forcekillactive,"
-          "$mod, E, exec, kitty -o confirm_os_window_close=0 -e yazi"
+          "$mod, E, exec, uwsm-app -- kitty -o confirm_os_window_close=0 -e yazi"
           "$mod, V, togglefloating,"
-          "$mod, SPACE, exec, rofi -config ~/.local/share/rofi/themes/custom.rasi -show drun"
+          "$mod, SPACE, exec, uwsm-app -- rofi -config ~/.local/share/rofi/themes/custom.rasi -show drun"
           "$mod, F, fullscreen"
-          "$mod, B, exec, chromium"
-          "$mod, Print, exec, hyprshot --clipboard-only -m region -z"
-          "$mod, L, exec, mpc status | loginctl lock-session"
-          "$mod, O, exec, hyprpicker -a -l"
-          ", F21, exec, mpc status | grep -q '\\[playing\\]' ; playing=$? ; mpc pause ; hyprlock ; if [ \"$playing\" -eq 0 ] ; then mpc play ; fi"
-          "$mod, semicolon, exec, smile"
+          "$mod, B, exec, uwsm-app -- chromium"
+          "$mod, Print, exec, uwsm-app -- hyprshot --clipboard-only -m region -z"
+          "$mod, L, exec, loginctl lock-session"
+          "$mod, O, exec, uwsm-app -- hyprpicker -a -l"
+          ", F21, exec, loginctl lock-session"
+          "$mod, semicolon, exec, uwsm-app -- smile"
           ", F19, exec, mpc toggle"
-          "$mod, P, exec, kitty -o confirm_os_window_close=0 -e python"
-          "$mod, H, exec, kitty --class clipse -o confirm_os_window_close=0 -e clipse"
-          "$mod, Z, exec, zeditor"
+          "$mod, P, exec, uwsm-app -- kitty -o confirm_os_window_close=0 -e python"
+          "$mod, H, exec, uwsm-app -- kitty --class clipse -o confirm_os_window_close=0 -e clipse"
+          "$mod, Z, exec, uwsm-app -- zeditor"
 
           # move focus with mod + arrows
           "$mod, left, movefocus, l"
@@ -369,7 +369,7 @@ in
 
         # ANCHOR hyprland env variables
         env = [
-          "XCURSOR_SIZE,24"
+          "XCURSOR_SIZE,28"
           "HYPRCURSOR_THEME,rose-pine-hyprcursor"
           "HYPRCURSOR_SIZE,28"
           "XDG_CURRENT_DESKTOP,Hyprland"
@@ -390,11 +390,11 @@ in
 
         # ANCHOR hyprland autostart
         exec-once = [
-          "waybar"
-          "ckb-next -b"
-          "mullvad-vpn"
-          "ydotoold"
-          "clipse -listen"
+          "uwsm-app -- waybar"
+          "uwsm-app -- ckb-next -b"
+          "uwsm-app -- mullvad-vpn"
+          "uwsm-app -- ydotoold"
+          "uwsm-app -- clipse -listen"
         ];
 
         windowrule = [
@@ -638,6 +638,11 @@ in
               border = mkLiteral "0px solid";
             };
           };
+
+        extraConfig = {
+          run-command = "uwsm-app -- {cmd}";
+          drun-command = "uwsm-app -- {cmd}";
+        };
       };
 
       programs.waybar.settings.main = {
