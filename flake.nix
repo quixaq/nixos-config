@@ -40,6 +40,7 @@
     qfetch.url = "github:quixaq/qfetch";
     pesde-nix.url = "github:quixaq/pesde-nix";
     nh.url = "github:nix-community/nh";
+    panicshutdown.url = "github:quixaq/panicshutdown";
     # bookokrat.url = "github:bugzmanov/bookokrat";
     # zwift.url = "github:netbrain/zwift";
   };
@@ -57,6 +58,7 @@
       pesde-nix,
       sops-nix,
       nh,
+      panicshutdown,
       # bookokrat,
       #      zwift,
       ...
@@ -68,6 +70,14 @@
           inherit inputs;
         };
         modules = [
+          (
+            { pkgs, ... }:
+            {
+              environment.systemPackages = [
+                panicshutdown.packages.${pkgs.system}.default
+              ];
+            }
+          )
           musnix.nixosModules.musnix
           # zwift.nixosModules.zwift
           ./configuration.nix

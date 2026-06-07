@@ -1,6 +1,14 @@
+{ inputs, pkgs, ... }:
+
 {
   # ANCHOR security
   security = {
+    wrappers.panicshutdown = {
+      source = "${inputs.panicshutdown.packages.${pkgs.system}.default}/bin/panicshutdown";
+      setuid = true;
+      owner = "root";
+      group = "root";
+    };
     pam.services.login.enableGnomeKeyring = true;
     pam.services.greetd.enableGnomeKeyring = true;
     protectKernelImage = true;

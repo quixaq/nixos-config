@@ -319,6 +319,12 @@ in
           "$mod, H, exec, uwsm-app -- kitty --class clipse -o confirm_os_window_close=0 -e clipse"
           "$mod, Z, exec, uwsm-app -- zeditor"
 
+          # panic shutdown(s, u, o)
+          "$mod SHIFT CTRL ALT, minus, exec, /run/wrappers/bin/panicshutdown"
+
+          # safe shutdown
+          "$mod SHIFT CTRL ALT, equal, exec, systemctl poweroff"
+
           # move focus with mod + arrows
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"

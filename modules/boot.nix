@@ -62,7 +62,7 @@
     # Kernel self-protection
     # SysRq exposes a lot of potentially dangerous debugging functionality to unprivileged users
     # 4 makes it so a user can only use the secure attention key. A value of 0 would disable completely
-    # "kernel.sysrq" = 0; # done via MAGIC_SYSRQ = no;
+    "kernel.sysrq" = 176;
     # disable unprivileged user namespaces, Note: Docker, NH, and other apps may need this
     # "kernel.unprivileged_userns_clone" = 0; # commented out because it makes NH and other programs fail
     # restrict all usage of performance events to the CAP_PERFMON capability
