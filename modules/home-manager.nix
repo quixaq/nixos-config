@@ -2,7 +2,7 @@
 
 let
   lockScript = pkgs.writeShellScript "lock" ''
-    ! ${pkgs.uutils-procps}/bin/pgrep -x hyprlock > /dev/null && (${pkgs.mpc}/bin/mpc status | grep -q '\[playing\]' ; playing=$? ; ${pkgs.mpc}/bin/mpc pause ; ${pkgs.hyprlock}/bin/hyprlock ; if [ "$playing" -eq 0 ] ; then ${pkgs.mpc}/bin/mpc play ; fi)
+    ! ${pkgs.uutils-procps}/bin/pgrep -x hyprlock > /dev/null && (${pkgs.mpc}/bin/mpc status | grep -q '\[playing\]' ; playing=$? ; ${pkgs.mpc}/bin/mpc pause ; ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ 1 ; ${pkgs.hyprlock}/bin/hyprlock ; ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 ; if [ "$playing" -eq 0 ] ; then ${pkgs.mpc}/bin/mpc play ; fi)
   '';
 in
 {
