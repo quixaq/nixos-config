@@ -165,6 +165,7 @@ in
     nix-output-monitor
     sops
     yabridge
+    zenity
 
     # Games
     prismlauncher
