@@ -124,6 +124,7 @@ in
     rustfmt
     clippy
     luau-lsp
+    lua-language-server
     package-version-server
 
     # Themes
