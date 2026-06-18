@@ -167,6 +167,7 @@ in
     sops
     yabridge
     zenity
+    swaybg
 
     # Games
     prismlauncher
