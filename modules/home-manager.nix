@@ -495,7 +495,6 @@ in
         };
 
         dwindle = {
-          pseudotile = true;
           preserve_split = true;
         };
 
@@ -506,7 +505,6 @@ in
         };
 
         misc = {
-          vfr = 1;
           vrr = 1;
           animate_manual_resizes = false;
           animate_mouse_windowdragging = false;
