@@ -1,6 +1,6 @@
 local cmds = {
     "waybar",
-    "ckb-next",
+    "ckb-next -b",
     "mullvad-vpn",
     "ydotoold",
     "clipse -listen",
