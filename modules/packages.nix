@@ -94,7 +94,7 @@ in
     thunar
     rofi
     legcord
-    chromium
+    ungoogled-chromium
     winetricks
     file-roller
     protonup-qt
