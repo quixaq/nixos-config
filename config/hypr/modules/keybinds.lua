@@ -41,8 +41,8 @@ hl.bind("SUPER + CTRL + M", hl.dsp.workspace.move({ monitor = "+1" }))
 hl.bind("SUPER + G", hl.dsp.workspace.toggle_special("magic"))
 hl.bind("SUPER + SHIFT + G", hl.dsp.window.move({ workspace = "special:magic" }))
 
-hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "+1" }))
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "-1" }))
 
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
