@@ -16,18 +16,18 @@ local bezier = {
 }
 
 local anim = {
-    { "windows",          3,   "md3_decel",  "popin 60%" },
-    { "windowsIn",        3,   "md3_decel",  "popin 60%" },
-    { "windowsOut",       3,   "md3_accel",  "popin 60%" },
-    { "border",           10,  "default" },
+    { "windows",          3,   "md3_decel", "popin 60%" },
+    { "windowsIn",        3,   "md3_decel", "popin 60%" },
+    { "windowsOut",       3,   "md3_accel", "popin 60%" },
+    { "border",           10,  "md3_decel" },
     { "fade",             3,   "md3_decel" },
-    { "layers",           2,   "md3_decel",  "slide" },
-    { "layersIn",         3,   "menu_decel", "slide" },
-    { "layersOut",        1.6, "menu_accel", "slide" },
-    { "fadeLayersIn",     2,   "menu_decel" },
-    { "fadeLayersOut",    4.5, "menu_accel" },
-    { "workspaces",       7,   "menu_decel", "slide" },
-    { "specialWorkspace", 3,   "md3_decel",  "slidevert" }
+    { "layers",           2,   "md3_decel", "slide" },
+    { "layersIn",         3,   "md3_decel", "slide" },
+    { "layersOut",        1.6, "md3_accel", "slide" },
+    { "fadeLayersIn",     2,   "md3_decel" },
+    { "fadeLayersOut",    4.5, "md3_accel" },
+    { "workspaces",       3.5, "md3_decel", "slide" },
+    { "specialWorkspace", 3,   "md3_decel", "slidevert" }
 }
 
 for _, curve in ipairs(bezier) do
