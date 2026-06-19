@@ -7,6 +7,8 @@
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
+  nixpkgs.config.ccache.enable = true;
+
   # Enable experimental features
   nix.settings.experimental-features = [
     "nix-command"
