@@ -1,6 +1,6 @@
 . ~/.local/share/../bin/env
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-. /run/current-system/sw/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+. "$P10K_PATH"
 
 alias sudo='doas'
 alias clean='mat2'

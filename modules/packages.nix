@@ -352,7 +352,11 @@ in
       plugins = [ "git" ];
       theme = "";
     };
+    interactiveShellInit = ''
+      source ~/.zshrc
+    '';
   };
+  environment.variables.P10K_PATH = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
 
   # ANCHOR allowUnfreePredictate
   nixpkgs.config.allowUnfreePredicate =
