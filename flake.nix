@@ -21,8 +21,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hjem = {
+      url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     lix = {
       url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
       flake = false;
@@ -50,6 +52,7 @@
       self,
       lix-module,
       lix,
+      hjem,
       nixpkgs,
       nix-index-database,
       musnix,
@@ -100,6 +103,7 @@
               path = "/home/quixaq/.ssh/id_quixaq_signing";
             };
           }
+          hjem.nixosModules.default
         ];
       };
     };

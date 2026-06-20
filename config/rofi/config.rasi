@@ -1,0 +1,8 @@
+configuration {
+    drun-command: "uwsm-app -- {cmd}";
+    location: 0;
+    run-command: "uwsm-app -- {cmd}";
+    xoffset: 0;
+    yoffset: 0;
+}
+@theme "custom"

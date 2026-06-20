@@ -1,0 +1,31 @@
+@define-color bg #303030;
+@define-color my #ffd6fe;
+
+* {
+    font-family: Roboto;
+    font-size: 17px;
+    min-height: 0;
+}
+
+#waybar {
+    background: transparent;
+    margin: 5px 5px;
+}
+
+#custom-music,
+#tray,
+#clock {
+    background-color: @bg;
+    padding: 0.5rem 1rem;
+    margin: 5px 0;
+    color: @my;
+    border-radius: 19px / 50%;
+}
+
+#clock {
+    margin-left: 1rem;
+}
+
+#tray {
+    margin-right: 1rem;
+}

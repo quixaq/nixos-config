@@ -5,6 +5,10 @@
 }:
 
 let
+  lockScript = pkgs.writeShellScriptBin "lock-session" ''
+    ! ${pkgs.uutils-procps}/bin/pgrep -x hyprlock > /dev/null && (${pkgs.mpc}/bin/mpc status | grep -q '\[playing\]' ; playing=$? ; ${pkgs.mpc}/bin/mpc pause ; ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ 1 ; ${pkgs.hyprlock}/bin/hyprlock ; ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 ; if [ "$playing" -eq 0 ] ; then ${pkgs.mpc}/bin/mpc play ; fi)
+  '';
+
   coreutils-full-name =
     "coreuutils-full"
     + builtins.concatStringsSep "" (
@@ -168,6 +172,9 @@ in
     yabridge
     zenity
     swaybg
+    lockScript
+    waybar
+    zsh-powerlevel10k
 
     # Games
     prismlauncher
@@ -335,7 +342,17 @@ in
   ];
 
   # ANCHOR zsh
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "";
+    };
+  };
 
   # ANCHOR allowUnfreePredictate
   nixpkgs.config.allowUnfreePredicate =

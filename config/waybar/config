@@ -1,0 +1,87 @@
+[
+  {
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon}",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "battery": {
+      "format": "{icon}",
+      "format-alt": "{icon}",
+      "format-charging": "",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "format-plugged": "",
+      "states": {
+        "critical": 15,
+        "warning": 30
+      }
+    },
+    "clock": {
+      "format": "{:%H:%M}",
+      "format-alt": "{:%d/%m/%Y}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/music": {
+      "escape": true,
+      "exec": "playerctl metadata --format='{{ title }}'",
+      "format": "{}",
+      "interval": 5,
+      "max-lenght": 50,
+      "on-click": "playerctl play-pause",
+      "tooltip": false
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "on-scroll-up": "hyprctl dispatch workspace e+1"
+    },
+    "layer": "top",
+    "modules-center": [],
+    "modules-left": [
+      "clock"
+    ],
+    "modules-right": [
+      "tray"
+    ],
+    "position": "top",
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          " "
+        ]
+      },
+      "format-muted": "",
+      "on-click": "pavucontrol"
+    },
+    "tray": {
+      "icon-size": 21,
+      "spacing": 10
+    }
+  }
+]

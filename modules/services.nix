@@ -46,6 +46,11 @@
       ];
     };
   };
+  systemd.services.mpd = {
+    serviceConfig = {
+      "ExecStart" = "${pkgs.mpd}/bin/mpd --systemd /home/quixaq/.config/mpd/mpd.conf";
+    };
+  };
   systemd.services.jitterentropy.serviceConfig = {
     SystemCallFilter = [
       "@system-service"
@@ -87,5 +92,10 @@
     };
     gnome.gnome-keyring.enable = true;
     blueman.enable = true;
+    mpd = {
+      enable = true;
+      user = "quixaq";
+    };
+    hypridle.enable = true;
   };
 }

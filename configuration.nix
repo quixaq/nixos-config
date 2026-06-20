@@ -7,11 +7,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    # Import home-manager
-    inputs.home-manager.nixosModules.home-manager
     # Import modules
     ./modules/boot.nix
-    ./modules/home-manager.nix
+    ./modules/hjem.nix
     ./modules/packages.nix
     ./modules/networking.nix
     ./modules/services.nix
