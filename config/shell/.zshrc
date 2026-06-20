@@ -15,4 +15,11 @@ alias top='htop'
 alias ps='procs'
 alias neofetch='qfetch'
 alias fastfetch='qfetch'
-alias nixbuild='nh os build && (doas /bin/sh -c "./result/bin/switch-to-configuration test ; ./result/bin/switch-to-configuration boot" ; rm result)'
+
+nh() {
+    if [[ "$1" == "os" && "$2" == "switch" ]]; then
+        command nh os boot "${@:3}" && (echo "\e[92m>\e[0m Switching to configuration" ; doas /nix/var/nix/profiles/system/bin/switch-to-configuration test)
+    else
+        command nh "$@"
+    fi
+}
