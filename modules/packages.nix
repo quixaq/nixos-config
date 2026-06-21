@@ -63,6 +63,7 @@ in
     iftop
     git
     gh
+    git-annex
     lm_sensors
     mat2
     xmrig
