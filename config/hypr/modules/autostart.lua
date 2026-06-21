@@ -1,10 +1,12 @@
 local cmds = {
     "waybar",
+    "swaybg -c '#1a1a1a' -m solid_color",
     "ckb-next -b",
     "mullvad-vpn",
     "ydotoold",
     "clipse -listen",
-    "swaybg -c '#1a1a1a' -m solid_color"
+    "legcord",
+    "steam"
 }
 
 hl.on("hyprland.start", function()
