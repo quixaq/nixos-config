@@ -61,6 +61,13 @@
   };
 
   services = {
+    hardware = {
+      openrgb = {
+        enable = true;
+        package = pkgs.openrgb-with-all-plugins;
+        motherboard = "amd";
+      };
+    };
     resolved.enable = true;
     mullvad-vpn.enable = true;
     mullvad-vpn.package = pkgs.mullvad-vpn;

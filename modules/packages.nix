@@ -104,6 +104,7 @@ in
     file-roller
     protonup-qt
     ckb-next
+    openrgb-with-all-plugins
     feh
     mpv
     gnome-system-monitor
