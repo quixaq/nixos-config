@@ -177,6 +177,7 @@ in
     lockScript
     waybar
     zsh-powerlevel10k
+    crates-tui
 
     # Games
     prismlauncher
