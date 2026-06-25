@@ -109,6 +109,7 @@ in
     mpv
     gnome-system-monitor
     gimp-with-plugins
+    krita
     obs-studio
     audacity
     filezilla
