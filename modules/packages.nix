@@ -179,6 +179,7 @@ in
     waybar
     zsh-powerlevel10k
     crates-tui
+    bpm-tools
 
     # Games
     prismlauncher
