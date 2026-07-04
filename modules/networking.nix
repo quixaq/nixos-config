@@ -56,5 +56,14 @@
       # enable = false;
     };
     nftables.enable = true;
+    networkmanager.settings = {
+      connection = {
+        "wifi.cloned-mac-address" = "random";
+        "ethernet.cloned-mac-address" = "random";
+      };
+      device = {
+        "wifi.scan-rand-mac-address" = "yes";
+      };
+    };
   };
 }
