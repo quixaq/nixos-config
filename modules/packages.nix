@@ -118,6 +118,7 @@ in
     kdePackages.kdenlive
     calibre
     reaper
+    sweethome3d.application
 
     # IDEs
     godot
@@ -180,6 +181,9 @@ in
     zsh-powerlevel10k
     crates-tui
     bpm-tools
+
+    # Audio Plugins
+    surge-xt
 
     # Games
     prismlauncher
