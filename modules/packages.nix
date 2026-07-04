@@ -237,6 +237,7 @@ in
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     nerd-fonts.jetbrains-mono
+    twitter-color-emoji
   ];
 
   # Hyprland
