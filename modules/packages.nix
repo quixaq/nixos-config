@@ -337,7 +337,7 @@ in
   nixpkgs.overlays = [
     (final: prev: {
       linux_xanmod_stable = prev.linux_xanmod_stable.override {
-        stdenv = pkgs.clangStdenv;
+        stdenv = pkgs.withCcache pkgs.clangStdenv;
         buildLLVM = true;
         argsOverride = {
           NIX_CFLAGS_COMPILE = "-march=znver4 -mtune=znver4";
