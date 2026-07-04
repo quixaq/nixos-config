@@ -103,6 +103,5 @@
       enable = true;
       user = "quixaq";
     };
-    hypridle.enable = true;
   };
 }

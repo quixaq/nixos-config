@@ -2,6 +2,7 @@ local cmds = {
     "waybar",
     "swaybg -c '#1a1a1a' -m solid_color",
     "ckb-next -b",
+    "hypridle",
     "mullvad-vpn",
     "ydotoold",
     "clipse -listen",
