@@ -99,6 +99,7 @@ in
     thunar
     rofi
     legcord
+    stoat-desktop
     ungoogled-chromium
     winetricks
     file-roller
