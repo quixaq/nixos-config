@@ -46,11 +46,6 @@
       ];
     };
   };
-  systemd.services.mpd = {
-    serviceConfig = {
-      "ExecStart" = "${pkgs.mpd}/bin/mpd --systemd /home/quixaq/.config/mpd/mpd.conf";
-    };
-  };
   systemd.services.jitterentropy.serviceConfig = {
     SystemCallFilter = [
       "@system-service"
@@ -58,6 +53,9 @@
     ];
     CapabilityBoundingSet = [ "CAP_IPC_LOCK" ];
     AmbientCapabilities = [ "CAP_IPC_LOCK" ];
+  };
+  systemd.services.mpd.environment = {
+    XDG_RUNTIME_DIR = "/run/user/1000";
   };
 
   services = {
@@ -83,9 +81,9 @@
       storage = "volatile";
       upload.enable = false;
       extraConfig = ''
-        				SystemMaxUse=500M
-        				SystemMaxFileSize=50M
-        			'';
+        SystemMaxUse=500M
+        SystemMaxFileSize=50M
+      '';
     };
     jitterentropy-rngd.enable = (!config.boot.isContainer);
     greetd = {
@@ -102,6 +100,17 @@
     mpd = {
       enable = true;
       user = "quixaq";
+      settings = {
+        music_directory = "/home/quixaq/Music";
+        replaygain = "track";
+        replaygain_preamp = 0;
+        audio_output = [
+          {
+            type = "pipewire";
+            name = "My PipeWire Output";
+          }
+        ];
+      };
     };
   };
 }

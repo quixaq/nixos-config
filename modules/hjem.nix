@@ -8,7 +8,6 @@
         xdg.config.files = {
           "hypr".source = ../config/hypr;
           "mimeapps.list".source = ../config/mimeapps.list;
-          "mpd/mpd.conf".source = ../config/mpd.conf;
           "kitty/kitty.conf".source = ../config/kitty.conf;
           "rofi/config.rasi".source = ../config/rofi/config.rasi;
           "waybar".source = ../config/waybar;
