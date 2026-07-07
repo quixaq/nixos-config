@@ -2,7 +2,8 @@
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 . "$P10K_PATH"
 
-alias -- sudo='doas'
+alias -- sudo='run0'
+alias -- doas='run0'
 alias -- clean='mat2'
 alias -- music_download='mullvad-exclude yt-dlp --concurrent-fragments 10 -f "bestaudio/best" -xi --audio-quality 0 --audio-format opus --embed-thumbnail --embed-metadata -o "%(title)s.%(ext)s" --no-overwrites'
 alias -- video_download='mullvad-exclude yt-dlp --concurrent-fragments 10 -f "bv+ba/b" --embed-thumbnail --embed-metadata -o "%(title)s.%(ext)s" --no-overwrites'
@@ -18,7 +19,7 @@ alias -- fastfetch='qfetch'
 
 nh() {
     if [[ "$1" == "os" && "$2" == "switch" ]]; then
-        command nh os boot "${@:3}" && (echo "\e[92m>\e[0m Switching to configuration" ; doas /nix/var/nix/profiles/system/bin/switch-to-configuration test)
+        command nh os boot "${@:3}" && (echo "\e[92m>\e[0m Switching to configuration" ; run0 /nix/var/nix/profiles/system/bin/switch-to-configuration test)
     else
         command nh "$@"
     fi
