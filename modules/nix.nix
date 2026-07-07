@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ inputs, ... }:
 
 {
   # Enable running optimizer on build

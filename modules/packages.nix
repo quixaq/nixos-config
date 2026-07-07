@@ -336,7 +336,7 @@ in
 
   # Overlays
   nixpkgs.overlays = [
-    (final: prev: {
+    (_: prev: {
       linux_xanmod_stable = prev.linux_xanmod_stable.override {
         stdenv = pkgs.clangStdenv;
         buildLLVM = true;

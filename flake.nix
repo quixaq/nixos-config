@@ -49,9 +49,7 @@
 
   outputs =
     {
-      self,
       lix-module,
-      lix,
       hjem,
       nixpkgs,
       nix-index-database,
