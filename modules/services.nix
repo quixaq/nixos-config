@@ -109,6 +109,16 @@
             type = "pipewire";
             name = "My PipeWire Output";
           }
+          {
+            type = "httpd";
+            name = "httpd stream";
+            encoder = "flac";
+            port = 3939;
+            bind_to_address = "127.0.0.1";
+            always_on = "yes";
+            format = "48000:24:2";
+            max_clients = "0";
+          }
         ];
       };
     };
