@@ -67,6 +67,7 @@
   };
 
   services = {
+    fwupd.enable = true;
     hardware = {
       openrgb = {
         enable = true;
