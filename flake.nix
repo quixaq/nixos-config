@@ -43,6 +43,7 @@
     pesde-nix.url = "github:quixaq/pesde-nix";
     nh.url = "github:nix-community/nh";
     panicshutdown.url = "github:quixaq/panicshutdown";
+    trivalent-nix.url = "github:quixaq/trivalent-nix";
     # bookokrat.url = "github:bugzmanov/bookokrat";
     # zwift.url = "github:netbrain/zwift";
   };
@@ -60,6 +61,7 @@
       sops-nix,
       nh,
       panicshutdown,
+      trivalent-nix,
       # bookokrat,
       #      zwift,
       ...
@@ -87,6 +89,7 @@
           nix-flatpak.nixosModules.nix-flatpak
           qfetch.nixosModules.default
           pesde-nix.nixosModules.default
+          trivalent-nix.nixosModules.default
           # { environment.systemPackages = [ inputs.bookokrat.packages."x86_64-linux".default ]; }
           { programs.nix-index-database.comma.enable = true; }
           sops-nix.nixosModules.sops

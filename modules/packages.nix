@@ -100,7 +100,6 @@ in
     rofi
     legcord
     stoat-desktop
-    ungoogled-chromium
     winetricks
     file-roller
     protonup-qt
@@ -218,9 +217,9 @@ in
   };
   xdg.portal.configPackages = [ pkgs.gnome-session ];
   xdg.mime.defaultApplications = {
-    "text/html" = "chromium.desktop";
-    "x-scheme-handler/http" = "chromium.desktop";
-    "x-scheme-handler/https" = "chromium.desktop";
+    "text/html" = "trivalent.desktop";
+    "x-scheme-handler/http" = "trivalent.desktop";
+    "x-scheme-handler/https" = "trivalent.desktop";
   };
   programs.dconf.enable = true;
   # ANCHOR fonts

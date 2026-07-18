@@ -2,7 +2,7 @@ local execbinds = {
     { "SUPER + Q",                          "uwsm-app -- kitty" },
     { "SUPER + E",                          "uwsm-app -- kitty -o confirm_os_window_close=0 -e yazi" },
     { "SUPER + SPACE",                      "uwsm-app -- rofi -config ~/.local/share/rofi/themes/custom.rasi -show drun" },
-    { "SUPER + B",                          "uwsm-app -- chromium" },
+    { "SUPER + B",                          "uwsm-app -- trivalent" },
     { "SUPER + Print",                      "uwsm-app -- hyprshot --clipboard-only -m region -z" },
     { "SUPER + L",                          "loginctl lock-session" },
     { "F12",                                "loginctl lock-session" },
