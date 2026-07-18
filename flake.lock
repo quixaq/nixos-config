@@ -530,11 +530,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1784399636,
-        "narHash": "sha256-h9AthxGqoquYtWrXdqjVmP3ZUKAij3GHqpqnnGiVEYs=",
+        "lastModified": 1784403758,
+        "narHash": "sha256-UQsBExxjKnEQm1Kac7eZyXILPz2fOOnOaxkQF35VffQ=",
         "owner": "quixaq",
         "repo": "trivalent-nix",
-        "rev": "ec99c137adc7d134f73f9d1715690c9b2ef46329",
+        "rev": "31bccc0cc92b8d633e8976be739d31e005411730",
         "type": "github"
       },
       "original": {
