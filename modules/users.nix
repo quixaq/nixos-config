@@ -7,7 +7,6 @@
     description = "quixaq";
     extraGroups = [
       "networkmanager"
-      "docker"
       "realtime"
       "audio"
       "render"
@@ -16,5 +15,17 @@
     ];
     shell = pkgs.zsh;
     # packages = with pkgs; [];
+    subUidRanges = [
+      {
+        startUid = 100000;
+        count = 65536;
+      }
+    ];
+    subGidRanges = [
+      {
+        startGid = 100000;
+        count = 65536;
+      }
+    ];
   };
 }
