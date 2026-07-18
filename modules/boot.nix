@@ -5,6 +5,7 @@
 }:
 
 {
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   # ANCHOR Bootloader.
   boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.loader.limine = {
