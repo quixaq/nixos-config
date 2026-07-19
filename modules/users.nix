@@ -12,6 +12,7 @@
       "render"
       "video"
       "kvm"
+      "boinc"
     ];
     shell = pkgs.zsh;
     # packages = with pkgs; [];

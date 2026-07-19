@@ -144,6 +144,9 @@
         };
       };
     };
+    boinc = {
+      enable = true;
+    };
     mpd = {
       enable = true;
       user = "quixaq";
