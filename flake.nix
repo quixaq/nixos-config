@@ -103,6 +103,10 @@
               owner = "quixaq";
               path = "/home/quixaq/.ssh/id_quixaq_signing";
             };
+            sops.secrets.maloja_env = {
+              owner = "root";
+              path = "/run/secrets/maloja.env";
+            };
           }
           hjem.nixosModules.default
         ];
