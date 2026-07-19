@@ -107,6 +107,10 @@
               owner = "root";
               path = "/run/secrets/maloja.env";
             };
+            sops.secrets.searxng_env = {
+              owner = "root";
+              path = "/run/secrets/searxng.env";
+            };
           }
           hjem.nixosModules.default
         ];

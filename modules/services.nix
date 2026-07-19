@@ -132,6 +132,18 @@
     };
     gnome.gnome-keyring.enable = true;
     blueman.enable = true;
+    searx = {
+      enable = true;
+      package = pkgs.searxng;
+      environmentFile = "/run/secrets/searxng.env";
+      settings = {
+        server = {
+          port = 8080;
+          bind_address = "127.0.0.1";
+          secret_key = "$SEARX_SECRET_KEY";
+        };
+      };
+    };
     mpd = {
       enable = true;
       user = "quixaq";
