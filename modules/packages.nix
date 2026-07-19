@@ -99,6 +99,7 @@ in
     thunar
     rofi
     legcord
+    fluffychat
     stoat-desktop
     winetricks
     file-roller
