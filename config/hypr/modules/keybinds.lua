@@ -5,7 +5,7 @@ local execbinds = {
     { "SUPER + B",                          "uwsm-app -- trivalent" },
     { "SUPER + Print",                      "uwsm-app -- hyprshot --clipboard-only -m region -z" },
     { "SUPER + L",                          "loginctl lock-session" },
-    { "F12",                                "loginctl lock-session" },
+    { "F21",                                "loginctl lock-session" },
     { "SUPER + O",                          "uwsm-app -- hyprpicker -a -l" },
     { "SUPER + semicolon",                  "uwsm-app -- smile" },
     { "F19",                                "mpc toggle" },
