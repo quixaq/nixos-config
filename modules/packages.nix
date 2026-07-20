@@ -182,6 +182,7 @@ in
     zsh-powerlevel10k
     crates-tui
     bpm-tools
+    distrobox
 
     # Audio Plugins
     surge-xt
