@@ -125,6 +125,7 @@ in
     godot
     neovim
     zed-editor
+    android-studio
 
     # LSPs
     nixd
@@ -375,5 +376,6 @@ in
       "steam-run"
       "osu-lazer-bin"
       "reaper"
+      "android-studio"
     ];
 }
