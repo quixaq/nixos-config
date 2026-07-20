@@ -13,7 +13,7 @@ local env = {
     { "ELECTRON_ENABLE_WAYLAND",             "1" },
     { "ELECTRON_OZONE_PLATFORM_HINT",        "wayland" },
     { "XDG_UTILS_TERMINAL",                  "kitty" },
-    { "XDG_UTILS_BROWSER",                   "chromium" },
+    { "XDG_UTILS_BROWSER",                   "trivalent" },
     { "XDG_UTILS_FILEMANAGER",               "thunar" },
     { "GTK_THEME",                           "Adwaita-dark" }
 }
