@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 
 {
   # ANCHOR security
@@ -9,6 +9,7 @@
       owner = "root";
       group = "root";
     };
+    wrappers.mullvad-exclude.setuid = lib.mkForce false;
     pam.services.login.enableGnomeKeyring = true;
     pam.services.greetd.enableGnomeKeyring = true;
     protectKernelImage = true;
