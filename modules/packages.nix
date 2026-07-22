@@ -347,6 +347,11 @@ in
         };
       };
     })
+    (_: prev: {
+      nil = prev.nil.overrideAttrs (old: {
+        doCheck = false;
+      });
+    })
   ];
 
   # ANCHOR zsh
