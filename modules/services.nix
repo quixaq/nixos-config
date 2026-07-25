@@ -130,6 +130,52 @@
         };
       };
     };
+    keyd = {
+      enable = true;
+      keyboards = {
+        default = {
+          ids = [ "*" ];
+          settings = {
+            main = {
+              f22 = "toggle(sturdy)";
+
+              q = "v";
+              w = "m";
+              e = "l";
+              r = "c";
+              t = "p";
+              y = "x";
+              u = "f";
+              i = "o";
+              o = "u";
+              p = "j";
+
+              a = "s";
+              s = "t";
+              d = "r";
+              f = "d";
+              g = "y";
+              h = "dot";
+              j = "n";
+              k = "a";
+              l = "e";
+              semicolon = "i";
+              apostrophe = "slash";
+
+              x = "k";
+              c = "q";
+              v = "g";
+              b = "w";
+              n = "b";
+              m = "h";
+              comma = "apostrophe";
+              dot = "semicolon";
+              slash = "comma";
+            };
+          };
+        };
+      };
+    };
     gnome.gnome-keyring.enable = true;
     blueman.enable = true;
     searx = {
