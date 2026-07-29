@@ -201,7 +201,6 @@ in
     packages = [
       "com.github.Matoking.protontricks"
       "io.github.Soundux"
-      "org.vinegarhq.Sober"
       "org.vinegarhq.Vinegar"
       "org.musicbrainz.Picard"
       "com.usebottles.bottles"
