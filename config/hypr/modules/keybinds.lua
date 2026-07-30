@@ -1,7 +1,7 @@
 local execbinds = {
     { "SUPER + V",                          "uwsm-app -- kitty" },
     { "SUPER + L",                          "uwsm-app -- kitty -o confirm_os_window_close=0 -e yazi" },
-    { "SUPER + SPACE",                      "uwsm-app -- rofi -config ~/.local/share/rofi/themes/custom.rasi -show drun" },
+    { "SUPER + SPACE",                      "dms ipc call spotlight toggle" },
     { "SUPER + W",                          "uwsm-app -- trivalent" },
     { "SUPER + Print",                      "uwsm-app -- hyprshot --clipboard-only -m region -z" },
     { "SUPER + E",                          "loginctl lock-session" },
@@ -10,7 +10,7 @@ local execbinds = {
     { "SUPER + I",                          "uwsm-app -- smile" },
     { "F19",                                "mpc toggle" },
     { "SUPER + J",                          "uwsm-app -- kitty -o confirm_os_window_close=0 -e python" },
-    { "SUPER + period",                     "uwsm-app -- kitty --class clipse -o confirm_os_window_close=0 -e clipse" },
+    { "SUPER + period",                     "dms ipc call clipboard toggle" },
     { "SUPER + Z",                          "uwsm-app -- zeditor" },
     { "SUPER + SHIFT + CTRL + ALT + minus", "/run/wrappers/bin/panicshutdown" },
     { "SUPER + SHIFT + CTRL + ALT + equal", "systemctl poweroff" },

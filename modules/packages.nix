@@ -5,10 +5,6 @@
 }:
 
 let
-  lockScript = pkgs.writeShellScriptBin "lock-session" ''
-    ! ${pkgs.uutils-procps}/bin/pgrep -x hyprlock > /dev/null && (${pkgs.mpc}/bin/mpc status | grep -q '\[playing\]' ; playing=$? ; ${pkgs.mpc}/bin/mpc pause ; ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ 1 ; ${pkgs.hyprlock}/bin/hyprlock ; ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 ; if [ "$playing" -eq 0 ] ; then ${pkgs.mpc}/bin/mpc play ; fi)
-  '';
-
   coreutils-full-name =
     "coreuutils-full"
     + builtins.concatStringsSep "" (
@@ -39,7 +35,6 @@ in
   # ANCHOR packages
   environment.systemPackages = with pkgs; [
     # Hypr ecosystem
-    hyprlock
     hyprpicker
     hyprshot
     hyprlang
@@ -97,7 +92,6 @@ in
     # Graphical Apps
     kitty
     thunar
-    rofi
     legcord
     fluffychat
     stoat-desktop
@@ -120,6 +114,7 @@ in
     calibre
     reaper
     sweethome3d.application
+    dms-shell
 
     # IDEs
     godot
@@ -146,7 +141,6 @@ in
     lune
     wally
     wine
-    dunst
     smile
     kernel-hardening-checker
     wl-clipboard
@@ -161,7 +155,6 @@ in
     pnpm
     wget
     dotnet-sdk_9
-    clipse
     gleam
     beam28Packages.erlang
     cargo
@@ -177,13 +170,11 @@ in
     sops
     yabridge
     zenity
-    swaybg
-    lockScript
-    waybar
     zsh-powerlevel10k
     crates-tui
     bpm-tools
     distrobox
+    quickshell
 
     # Audio Plugins
     surge-xt
@@ -247,8 +238,22 @@ in
   programs.hyprland.withUWSM = true;
   # hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  # Enable hyprlock
-  programs.hyprlock.enable = true;
+
+  # DMS
+  programs.dms-shell = {
+    enable = true;
+
+    systemd = {
+      enable = true;
+      restartIfChanged = true;
+    };
+
+    # Core features
+    enableSystemMonitoring = true;
+    enableVPN = true;
+    enableDynamicTheming = true;
+    enableAudioWavelength = true;
+  };
 
   # Steam
   programs.steam.enable = true;
