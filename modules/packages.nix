@@ -175,6 +175,7 @@ in
     bpm-tools
     distrobox
     quickshell
+    mpdris2-rs
 
     # Audio Plugins
     surge-xt
