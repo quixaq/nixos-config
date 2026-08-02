@@ -58,6 +58,7 @@ in
     iftop
     git
     gh
+    forgejo-cli
     git-annex
     lm_sensors
     mat2
