@@ -120,7 +120,7 @@ in
     # IDEs
     godot
     neovim
-    zed-editor
+    gram
     android-studio
 
     # LSPs
@@ -159,7 +159,6 @@ in
     gleam
     beam28Packages.erlang
     cargo
-    rustc
     xdg-dbus-proxy
     xdg-desktop-portal
     xdg-desktop-portal-gtk
@@ -255,6 +254,11 @@ in
     enableVPN = true;
     enableDynamicTheming = true;
     enableAudioWavelength = true;
+  };
+
+  # nix-ld
+  programs.nix-ld = {
+    enable = true;
   };
 
   # Steam

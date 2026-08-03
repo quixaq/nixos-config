@@ -44,6 +44,10 @@
     nh.url = "github:nix-community/nh";
     panicshutdown.url = "git+https://codeberg.org/quixaq/panicshutdown";
     trivalent-nix.url = "git+https://codeberg.org/quixaq/trivalent-nix";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # bookokrat.url = "github:bugzmanov/bookokrat";
     # zwift.url = "github:netbrain/zwift";
   };
@@ -62,6 +66,7 @@
       nh,
       panicshutdown,
       trivalent-nix,
+      rust-overlay,
       # bookokrat,
       #      zwift,
       ...
@@ -80,6 +85,18 @@
                 panicshutdown.packages.${pkgs.system}.default
               ];
             }
+          )
+          (
+           { pkgs, ... }:
+           {
+             nixpkgs.overlays = [ rust-overlay.overlays.default ];
+             environment.systemPackages = with pkgs; [
+              (rust-bin.nightly.latest.default.override {
+                extensions = [ "clippy" "rustfmt" "rust-src" ];
+                targets = [ "wasm32-wasip2" ];
+              })
+            ];
+           }
           )
           musnix.nixosModules.musnix
           # zwift.nixosModules.zwift

@@ -11,7 +11,7 @@ local execbinds = {
     { "F19",                                "mpc toggle" },
     { "SUPER + J",                          "uwsm-app -- kitty -o confirm_os_window_close=0 -e python" },
     { "SUPER + period",                     "dms ipc call clipboard toggle" },
-    { "SUPER + Z",                          "uwsm-app -- zeditor" },
+    { "SUPER + Z",                          "uwsm-app -- gram" },
     { "SUPER + SHIFT + CTRL + ALT + minus", "/run/wrappers/bin/panicshutdown" },
     { "SUPER + SHIFT + CTRL + ALT + equal", "systemctl poweroff" },
     { "SUPER + CTRL + SHIFT + ALT + H",     "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'" }
