@@ -378,17 +378,17 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1781964770,
-        "narHash": "sha256-A9m6YKveiKziZEamg5PQmEc0JEiSdLpL+2cv2+bFkWo=",
-        "owner": "quixaq",
-        "repo": "panicshutdown",
-        "rev": "cbde69b5fc24a5a4480079fd1b157ad7faff7ef2",
-        "type": "github"
+        "lastModified": 1785694431,
+        "narHash": "sha256-fsC2jiNYJRAw6vFnuWWoSHIAR+PGFChf39lqyURSAu8=",
+        "ref": "refs/heads/main",
+        "rev": "95ebe47765ac891a5295f7fd31e13a1294e96b9b",
+        "revCount": 9,
+        "type": "git",
+        "url": "https://codeberg.org/quixaq/panicshutdown"
       },
       "original": {
-        "owner": "quixaq",
-        "repo": "panicshutdown",
-        "type": "github"
+        "type": "git",
+        "url": "https://codeberg.org/quixaq/panicshutdown"
       }
     },
     "pesde-nix": {
@@ -398,17 +398,17 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1784557630,
-        "narHash": "sha256-JV+fkN36auuLUlkjTmK5XC+ciR30xhsKzeH/6swDpcI=",
-        "owner": "quixaq",
-        "repo": "pesde-nix",
-        "rev": "ba5178cdbcc12d24d39cf929e2b76f79d990f8c7",
-        "type": "github"
+        "lastModified": 1785748291,
+        "narHash": "sha256-dtruK5i1f/pf5388yOmzXeW/hGC1hJCtZYRAlsnTwfg=",
+        "ref": "refs/heads/main",
+        "rev": "40a4df2c4279fa64cd4ef85bf9058aae94493e81",
+        "revCount": 18,
+        "type": "git",
+        "url": "https://codeberg.org/quixaq/pesde-nix"
       },
       "original": {
-        "owner": "quixaq",
-        "repo": "pesde-nix",
-        "type": "github"
+        "type": "git",
+        "url": "https://codeberg.org/quixaq/pesde-nix"
       }
     },
     "qfetch": {
@@ -417,17 +417,17 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1784557311,
-        "narHash": "sha256-lQbdKyRlOKSocm4tvxpg3ZNNNFCJtyiOb2DePD6f/cY=",
-        "owner": "quixaq",
-        "repo": "qfetch",
-        "rev": "4bc3f064143e44672f1548a39396e8f2c7430d76",
-        "type": "github"
+        "lastModified": 1785693868,
+        "narHash": "sha256-r5XFnDi9OTmKczVS/NPt/kwAH0BhX7Zb+GH2t7S9K/w=",
+        "ref": "refs/heads/main",
+        "rev": "6dd6aa3f7995b6723567ee8b2d052197038500cd",
+        "revCount": 37,
+        "type": "git",
+        "url": "https://codeberg.org/quixaq/qfetch"
       },
       "original": {
-        "owner": "quixaq",
-        "repo": "qfetch",
-        "type": "github"
+        "type": "git",
+        "url": "https://codeberg.org/quixaq/qfetch"
       }
     },
     "root": {
@@ -530,17 +530,17 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1784722354,
-        "narHash": "sha256-+M7WN/YjqlvhyzpSudeVwYAFh9C2E2F7k6h5iTDe0TY=",
-        "owner": "quixaq",
-        "repo": "trivalent-nix",
-        "rev": "9b900c25a1773816ebf19f7007ed14440b33a81b",
-        "type": "github"
+        "lastModified": 1785747801,
+        "narHash": "sha256-DuMWN3w5+QDYwMDtmrkq4WLN0BR3Fk4vSU6rt9gG/6Q=",
+        "ref": "refs/heads/main",
+        "rev": "305f4af0e7bee131153e355bb3ff31f37a74c9ae",
+        "revCount": 46,
+        "type": "git",
+        "url": "https://codeberg.org/quixaq/trivalent-nix"
       },
       "original": {
-        "owner": "quixaq",
-        "repo": "trivalent-nix",
-        "type": "github"
+        "type": "git",
+        "url": "https://codeberg.org/quixaq/trivalent-nix"
       }
     }
   },
