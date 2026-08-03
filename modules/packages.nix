@@ -132,6 +132,7 @@ in
     luau-lsp
     lua-language-server
     package-version-server
+    vscode-json-languageserver
 
     # Themes
     rose-pine-hyprcursor
