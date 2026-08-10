@@ -352,15 +352,6 @@ in
   # Overlays
   nixpkgs.overlays = [
     (_: prev: {
-      linux_xanmod_stable = prev.linux_xanmod_stable.override {
-        stdenv = pkgs.clangStdenv;
-        buildLLVM = true;
-        argsOverride = {
-          NIX_CFLAGS_COMPILE = "-march=znver4 -mtune=znver4";
-        };
-      };
-    })
-    (_: prev: {
       nil = prev.nil.overrideAttrs (old: {
         doCheck = false;
       });

@@ -1,11 +1,7 @@
-{ pkgs, ... }:
-
 {
   # Musnix
   musnix = {
     enable = true;
-    kernel.realtime = true;
-    kernel.packages = pkgs.linuxKernel.packages.linux_xanmod_stable;
     rtirq.enable = true;
     rtcqs.enable = true;
     das_watchdog.enable = true;
