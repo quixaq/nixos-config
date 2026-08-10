@@ -133,6 +133,7 @@ in
     lua-language-server
     package-version-server
     vscode-json-languageserver
+    yaml-language-server
 
     # Themes
     rose-pine-hyprcursor
