@@ -132,8 +132,6 @@
           ids = [ "*" ];
           settings = {
             main = {
-              f22 = "toggle(sturdy)";
-
               q = "v";
               w = "m";
               e = "l";
