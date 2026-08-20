@@ -76,7 +76,7 @@
       User = "root";
       ExecStart = [
         ""
-        "${pkgs.mullvad-vpn}/bin/mullvad-exclude ${pkgs.snowflake}/bin/proxy"
+        "${pkgs.mullvad}/bin/mullvad-exclude ${pkgs.snowflake}/bin/proxy"
       ];
     };
   };
@@ -170,6 +170,7 @@
       };
     };
     gnome.gnome-keyring.enable = true;
+    gnome.gcr-ssh-agent.enable = false;
     blueman.enable = true;
     searx = {
       enable = true;

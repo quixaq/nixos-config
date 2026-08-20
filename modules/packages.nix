@@ -274,10 +274,9 @@ in
   # GNUPG
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
   };
 
-  #programs.ssh.startAgent = true;
+  programs.ssh.startAgent = true;
 
   # NH
   programs.nh = {
