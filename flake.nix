@@ -87,16 +87,20 @@
             }
           )
           (
-           { pkgs, ... }:
-           {
-             nixpkgs.overlays = [ rust-overlay.overlays.default ];
-             environment.systemPackages = with pkgs; [
-              (rust-bin.nightly.latest.default.override {
-                extensions = [ "clippy" "rustfmt" "rust-src" ];
-                targets = [ "wasm32-wasip2" ];
-              })
-            ];
-           }
+            { pkgs, ... }:
+            {
+              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+              environment.systemPackages = with pkgs; [
+                (rust-bin.nightly.latest.default.override {
+                  extensions = [
+                    "clippy"
+                    "rustfmt"
+                    "rust-src"
+                  ];
+                  targets = [ "wasm32-wasip2" ];
+                })
+              ];
+            }
           )
           musnix.nixosModules.musnix
           # zwift.nixosModules.zwift
