@@ -278,6 +278,8 @@ in
     enableSSHSupport = true;
   };
 
+  #programs.ssh.startAgent = true;
+
   # NH
   programs.nh = {
     enable = true;
