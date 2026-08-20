@@ -103,7 +103,7 @@
     };
     resolved.enable = true;
     mullvad-vpn.enable = true;
-    mullvad-vpn.package = pkgs.mullvad-vpn;
+    mullvad-vpn.gui.enable = true;
     tor = {
       enable = true;
       client.enable = true;
