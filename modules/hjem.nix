@@ -10,6 +10,7 @@
           "mimeapps.list".source = ../config/mimeapps.list;
           "kitty/kitty.conf".source = ../config/kitty.conf;
           "gtk-3.0/settings.ini".source = ../config/gtk3.ini;
+          "listenbrainz-mpd/config.toml".source = ../config/listenbrainz-mpd.toml;
         };
         files = {
           ".p10k.zsh".source = ../config/shell/p10k.zsh;

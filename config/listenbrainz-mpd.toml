@@ -1,0 +1,5 @@
+[submission]
+token_file = "/run/secrets/listenbrainz_token"
+
+[mpd]
+address = "localhost:6600"

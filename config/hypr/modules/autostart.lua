@@ -3,7 +3,8 @@ local cmds = {
     "ckb-next -b",
     "hypridle",
     "mullvad-vpn",
-    "uwsm-app sleep 5 ; mpdris2-rs",
+    "listenbrainz-mpd",
+    "sleep 5 ; mpdris2-rs",
     "ydotoold",
     "legcord",
     "steam"

@@ -27,32 +27,6 @@
     };
   };
 
-  virtualisation.oci-containers.containers = {
-    maloja = {
-      image = "docker.io/krateng/maloja:latest";
-      ports = [
-        "42010:42010"
-      ];
-      volumes = [
-        "/var/lib/maloja:/config:rshared"
-      ];
-      environmentFiles = [
-        "/run/secrets/maloja.env"
-      ];
-    };
-    multiscrobbler = {
-      image = "docker.io/foxxmd/multi-scrobbler";
-      extraOptions = [ "--network=host" ];
-      volumes = [
-        "/var/lib/multiscrobbler:/config"
-      ];
-      environment = {
-        TZ = "Europe/Warsaw";
-        BASE_URL = "127.0.0.1:9078";
-      };
-    };
-  };
-
   # Services
   hardware = {
     ckb-next = {

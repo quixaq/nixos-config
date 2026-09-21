@@ -45,6 +45,7 @@ in
     trash-cli
     vim
     mpc
+    listenbrainz-mpd
     loudgain
     android-tools
     p7zip
