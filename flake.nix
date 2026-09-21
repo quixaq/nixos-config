@@ -40,7 +40,6 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     sops-nix.url = "github:Mic92/sops-nix";
     qfetch.url = "git+https://codeberg.org/quixaq/qfetch";
-    pesde-nix.url = "git+https://codeberg.org/quixaq/pesde-nix";
     nh.url = "github:nix-community/nh";
     panicshutdown.url = "git+https://codeberg.org/quixaq/panicshutdown";
     trivalent-nix.url = "git+https://codeberg.org/quixaq/trivalent-nix";
@@ -61,7 +60,6 @@
       musnix,
       nix-flatpak,
       qfetch,
-      pesde-nix,
       sops-nix,
       nh,
       panicshutdown,
@@ -109,7 +107,6 @@
           nix-index-database.nixosModules.default
           nix-flatpak.nixosModules.nix-flatpak
           qfetch.nixosModules.default
-          pesde-nix.nixosModules.default
           trivalent-nix.nixosModules.default
           # { environment.systemPackages = [ inputs.bookokrat.packages."x86_64-linux".default ]; }
           { programs.nix-index-database.comma.enable = true; }

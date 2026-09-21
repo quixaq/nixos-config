@@ -178,6 +178,7 @@ in
     distrobox
     quickshell
     mpdris2-rs
+    pesde
 
     # Audio Plugins
     surge-xt
