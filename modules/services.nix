@@ -60,7 +60,7 @@
       package = pkgs.ckb-next;
     };
     bluetooth.enable = true;
-    bluetooth.powerOnBoot = true;
+    bluetooth.powerOnBoot = false;
     steam-hardware.enable = true;
     cpu.x86.msr.enable = true;
     amdgpu.initrd.enable = true;
