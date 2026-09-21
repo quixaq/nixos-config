@@ -78,6 +78,7 @@ in
     libsecret
     google-lighthouse
     yabridgectl
+    webdav
 
     # GNU coreutils replacements
     htop
