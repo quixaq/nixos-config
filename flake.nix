@@ -47,6 +47,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
     # bookokrat.url = "github:bugzmanov/bookokrat";
     # zwift.url = "github:netbrain/zwift";
   };
@@ -64,6 +65,7 @@
       nh,
       panicshutdown,
       trivalent-nix,
+      playit-nixos-module,
       rust-overlay,
       # bookokrat,
       #      zwift,
@@ -106,6 +108,7 @@
           lix-module.nixosModules.default
           nix-index-database.nixosModules.default
           nix-flatpak.nixosModules.nix-flatpak
+          playit-nixos-module.nixosModules.default
           qfetch.nixosModules.default
           trivalent-nix.nixosModules.default
           # { environment.systemPackages = [ inputs.bookokrat.packages."x86_64-linux".default ]; }
@@ -114,22 +117,33 @@
           {
             nixpkgs.overlays = [ nh.overlays.default ];
           }
-          {
-            sops.defaultSopsFile = ./secrets/secrets.yaml;
-            sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
-            sops.secrets.git_signing_key = {
-              owner = "quixaq";
-              path = "/home/quixaq/.ssh/id_quixaq_signing";
-            };
-            sops.secrets.maloja_env = {
-              owner = "root";
-              path = "/run/secrets/maloja.env";
-            };
-            sops.secrets.searxng_env = {
-              owner = "root";
-              path = "/run/secrets/searxng.env";
-            };
-          }
+          (
+            { config, ... }:
+            {
+              sops.defaultSopsFile = ./secrets/secrets.yaml;
+              sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
+              sops.secrets.git_signing_key = {
+                owner = "quixaq";
+                path = "/home/quixaq/.ssh/id_quixaq_signing";
+              };
+              sops.secrets.searxng_env = {
+                owner = "root";
+                path = "/run/secrets/searxng.env";
+              };
+              sops.secrets.listenbrainz_token = {
+                owner = "quixaq";
+                path = "/run/secrets/listenbrainz";
+              };
+              sops.secrets.playit = {
+                owner = "root";
+                path = "/run/secrets/playit.toml";
+              };
+              services.playit = {
+                enable = true;
+                secretPath = config.sops.secrets.playit.path;
+              };
+            }
+          )
           hjem.nixosModules.default
         ];
       };
