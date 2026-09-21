@@ -108,7 +108,7 @@ in
     gimp-with-plugins
     krita
     obs-studio
-    audacity
+    tenacity
     filezilla
     localsend
     seahorse
