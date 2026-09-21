@@ -23,6 +23,7 @@
         8009
         27036
         10128
+        6065
       ];
       allowedUDPPorts = [
         53317
@@ -41,6 +42,7 @@
         3478
         4379
         4380
+        6065
       ];
       allowedUDPPortRanges = [
         {
