@@ -6,7 +6,7 @@ local cmds = {
     "listenbrainz-mpd",
     "sleep 5 ; mpdris2-rs",
     "ydotoold",
-    "legcord",
+    --"legcord",
     "steam"
 }
 
