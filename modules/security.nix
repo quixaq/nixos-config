@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  lib,
   ...
 }:
 
@@ -14,7 +13,6 @@
       owner = "root";
       group = "root";
     };
-    wrappers.mullvad-exclude.setuid = lib.mkForce false;
     pam.services.login.enableGnomeKeyring = true;
     pam.services.greetd.enableGnomeKeyring = true;
     protectKernelImage = true;
