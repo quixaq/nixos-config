@@ -252,12 +252,6 @@ in
       enable = true;
       restartIfChanged = true;
     };
-
-    # Core features
-    enableSystemMonitoring = true;
-    enableVPN = true;
-    enableDynamicTheming = true;
-    enableAudioWavelength = true;
   };
 
   # nix-ld
