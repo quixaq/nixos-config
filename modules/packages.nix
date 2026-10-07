@@ -382,5 +382,6 @@ in
       "steam-run"
       "osu-lazer-bin"
       "reaper"
+      "lsfg-vk"
     ];
 }
