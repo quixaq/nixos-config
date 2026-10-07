@@ -54,6 +54,13 @@
       ];
     };
   };
+  systemd.services.playit = {
+    after = [ "sys-subsystem-net-devices-mullvad-tun.device" ];
+    requires = [
+      "mullvad-daemon.service"
+      "sys-subsystem-net-devices-mullvad-tun.device"
+    ];
+  };
   systemd.services.jitterentropy.serviceConfig = {
     SystemCallFilter = [
       "@system-service"
