@@ -91,14 +91,17 @@
             {
               nixpkgs.overlays = [ rust-overlay.overlays.default ];
               environment.systemPackages = with pkgs; [
-                (rust-bin.nightly.latest.default.override {
-                  extensions = [
-                    "clippy"
-                    "rustfmt"
-                    "rust-src"
-                  ];
-                  targets = [ "wasm32-wasip2" ];
-                })
+                (rust-bin.selectLatestNightlyWith (
+                  toolchain:
+                  toolchain.default.override {
+                    extensions = [
+                      "clippy"
+                      "rustfmt"
+                      "rust-src"
+                    ];
+                    targets = [ "wasm32-wasip2" ];
+                  }
+                ))
               ];
             }
           )
